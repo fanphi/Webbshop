@@ -1,0 +1,18 @@
+$header-color: #131313;
+$accent-color: #E5C7AB;
+$footer-color:#9B5151;
+$accent-yellow: #F4CD84;
+$logo-color: #E7BD70;
+$lighter-color: hsl(0, 5%, 24%);
+
+//Mixins
+
+@mixin main-font {
+    font-family: 'Shippori Mincho B1', serif;
+}
+//@include main-font;
+
+@mixin booktuary-font {
+    font-family: 'Josefin Sans', sans-serif;
+}
+//@include booktuary-font;
