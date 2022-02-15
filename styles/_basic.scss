@@ -1,3 +1,7 @@
+//Styling mobile first
+
+
+
 * {
     margin: 0;
     padding: 0;
@@ -15,8 +19,16 @@
     .logo-link-wrapper{
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: flex-start;
+
+        a {
+            @include booktuary-font;
+            color: $accent-color;
+            text-decoration: none;
+            font-weight: 350;
+
+        }
     }
 
     .logo {
@@ -31,9 +43,10 @@
             
             a{
                 color: $accent-color;
+                @include booktuary-font;
                 font-size: medium;
                 text-decoration: none;
-                @include main-font;
+                font-weight: 350;
                 padding: 0px 10px;
                 
             }
@@ -75,7 +88,7 @@ main {
         justify-content: center;
         align-items: center;
         h1 {
-            @include main-font;
+            @include booktuary-font;
         }
         
     }
@@ -107,9 +120,14 @@ main {
 
 
 .main-footer {
-    background: $footer-color;
+    background: #7e4b34;
+
     height: 30%;
     width: 100%;
+
+    h3, h2 {
+        color: $accent-color;
+    }
 }
 
 .fa-brands{
@@ -119,7 +137,3 @@ main {
 .fa-solid{
     color: white;
 }
-@import "./variables";
-@import "./basic";
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Shippori+Mincho+B1&display=swap');
-
