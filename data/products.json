@@ -1,0 +1,130 @@
+{
+  "categories": {
+    "poetry": [
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ]
+    ],
+    "science": [
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ]
+    ],
+    "classics": [
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ],
+      [
+        {
+          "title": "bok-titel",
+          "book-image": "url",
+          "author": "author-namn",
+          "price": 100
+        }
+      ]
+    ]
+  }
+}
