@@ -3,126 +3,126 @@
     "poetry": [
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Samlade dikter",
+          "book-image": "./img/poetry1.jfif",
+          "author": "Bodil Malmsten",
+          "price": 299
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Samlade dikter",
+          "book-image": "./img/poetry2.jfif",
+          "author": "Edith Södergran",
+          "price": 199
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Samlade dikter",
+          "book-image": "./img/poetry3.jfif",
+          "author": "Karin Boye",
+          "price": 199
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Lord of the Butterflies",
+          "book-image": "./img/poetry4.jfif",
+          "author": "Andrea Gibson",
+          "price": 299
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Poems for a world gone to sh*t",
+          "book-image": "./img/poetry5.jfif",
+          "author": "Various",
+          "price": 199
         }
       ]
     ],
     "science": [
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Entangled life",
+          "book-image": "./img/science1.jfif",
+          "author": "Merlin Sheldrake",
+          "price": 299
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Wicked plants",
+          "book-image": "./img/science2.jfif",
+          "author": "Amy Stewart",
+          "price": 199
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "The drunken botanist",
+          "book-image": "./img/science3.jfif",
+          "author": "Amy Stewart",
+          "price": 299
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "JavaScript for dummies",
+          "book-image": "./img/science4.jfif",
+          "author": "Emily A. Vander Veer",
+          "price": 399
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Laziness does not exist",
+          "book-image": "./img/science5.jfif",
+          "author": "Devon Price, Ph.D.",
+          "price": 199
         }
       ]
     ],
     "classics": [
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Pride and prejudice",
+          "book-image": "./img/classic1.jfif",
+          "author": "Jane Austen",
+          "price": 199
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "The Great Gatsby",
+          "book-image": "./img/classic2.jfif",
+          "author": "F. Scott Fitzgerald",
+          "price": 199
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Mrs Dalloway",
+          "book-image": "./img/classic3.jfif",
+          "author": "Virginia Woolf",
+          "price": 199
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "1984",
+          "book-image": "./img/classic4.jfif",
+          "author": "George Orwell",
+          "price": 199
         }
       ],
       [
         {
-          "title": "bok-titel",
-          "book-image": "url",
-          "author": "author-namn",
-          "price": 100
+          "title": "Frankenstein",
+          "book-image": "./img/classic5.jfif",
+          "author": "Mary Shelley",
+          "price": 199
         }
       ]
     ]
