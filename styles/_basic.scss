@@ -111,22 +111,49 @@ main {
 
 .main-footer {
   background: #7e4b34;
-
   height: 30%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 25px;
+  text-align: center;
 
-  h3,
-  h2 {
-    color: $accent-color;
+  div i.fa-brands {
+    font-size: 25px;
   }
+
+  .footer-column-right .social-media-icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  h3, h2, .footer-copyright-text{
+    color: $accent-color;
+    @include booktuary-font;
+    font-weight: 400;
+  }
+
+  
 }
 
 .fa-brands {
-  color: white;
+  color: blanchedalmond;
 }
 
 .fa-solid {
-  color: white;
-  //color:#b99e83;
+
+  color: blanchedalmond;
 }
-// fixing issues
+
+
+
+
+@media screen and (max-width: 500px) {
+  .main-footer {
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
+}
+
