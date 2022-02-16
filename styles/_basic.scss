@@ -40,8 +40,8 @@
 
 
   .logo { //* Kev ändringar, fixar så att loggan är rimligt stor
-    width: 20%;
-    height: 20%;
+    width: 30%;
+    height: 30%;
   } //* slut på ändringar
 
 
@@ -65,9 +65,9 @@
 }
 
 .btn {
-  @include main-font;
-  font-weight: bold;
-  font-size: x-small;
+  @include booktuary-font;
+  font-weight: normal;
+  font-size: medium;
   padding: 8px;
   outline: none;
   cursor: pointer;
@@ -75,6 +75,8 @@
   border-radius: 5px;
   background-color: $accent-color;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  height: 40px;
+  // width: 110px;
 }
 
 .btn:hover {
@@ -86,11 +88,13 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: $logo-color;
+  height: 500px;
+ 
 
   .start-headline {
-    border: solid 1px black;
+    margin-top: 30px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -98,25 +102,54 @@ main {
     align-items: center;
     h1 {
       @include booktuary-font;
+      font-size: 30px;
+      font-weight:normal;
+    }
+    .start-info{
+      font-size: 20px;
     }
   }
 
   .start-content {
     width: 100%;
-    border: solid 1px black;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     .product-container {
-      height: 200px;
-      width: 40%;
-      border: solid 1px black;
-      background: blanchedalmond;
+      // height: 225px;
+      // width: 180px;
+      display: flex;
+      // justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .img-frame{
+        background: blanchedalmond;
+        height: 230px;
+      width: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+
+      .book-img{
+        width: 145px;
+        height: 210px;
+      }
+
+      .book-title{
+        margin-top: 10px;
+        font-size: 20px;
+
+      }
 
       .category-price {
         font-size: large;
         font-style: oblique;
+        margin-bottom: 10px;
       }
     }
   }
@@ -169,6 +202,10 @@ main {
     gap: 25px;
   }
 
+  .logo{
+    width: 40%;
+    height: auto;
+  }
   .logo-link-wrapper .login-nav .hidden{  //* Kev, testar med hidden klassen så att texten försvinner i mobile format
     display: none;
   }
