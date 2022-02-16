@@ -102,7 +102,7 @@ main {
     align-items: center;
     h1 {
       @include booktuary-font;
-      font-size: 30px;
+      font-size: 300px;
       font-weight:normal;
     }
     .start-info{
@@ -156,8 +156,8 @@ main {
 }
 
 .main-footer {
-  background: #7e4b34;
-  height: 300%;
+  background: #361708;
+  height: 30%;
   width: 100%;
   display: flex;
   align-items: center;
