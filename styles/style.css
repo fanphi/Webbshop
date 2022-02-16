@@ -13,14 +13,14 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: space-between;
-      -ms-flex-align: space-between;
-          align-items: space-between;
+  -ms-flex-align: space-between;
+  align-items: space-between;
 }
 
 .main-header .logo-link-wrapper {
@@ -29,19 +29,19 @@
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 .main-header .logo-link-wrapper a {
-  font-family: 'Josefin Sans', sans-serif;
-  color: #E5C7AB;
+  font-family: "Josefin Sans", sans-serif;
+  color: #e5c7ab;
   text-decoration: none;
   font-weight: 350;
 }
@@ -57,8 +57,8 @@
 }
 
 .main-header .nav-wrapper .header-nav a {
-  color: #E5C7AB;
-  font-family: 'Josefin Sans', sans-serif;
+  color: #e5c7ab;
+  font-family: "Josefin Sans", sans-serif;
   font-size: medium;
   text-decoration: none;
   font-weight: 350;
@@ -66,7 +66,7 @@
 }
 
 .btn {
-  font-family: 'Shippori Mincho B1', serif;
+  font-family: "Shippori Mincho B1", serif;
   font-weight: bold;
   font-size: x-small;
   padding: 8px;
@@ -74,9 +74,9 @@
   cursor: pointer;
   border: 1px solid #131313;
   border-radius: 5px;
-  background-color: #E5C7AB;
+  background-color: #e5c7ab;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover {
@@ -90,15 +90,15 @@ main {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #E7BD70;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #e7bd70;
 }
 
 main .start-headline {
@@ -109,18 +109,18 @@ main .start-headline {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 main .start-headline h1 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 main .start-content {
@@ -130,11 +130,11 @@ main .start-content {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 main .start-content .product-container {
@@ -151,12 +151,23 @@ main .start-content .product-container .category-price {
 
 .main-footer {
   background: #7e4b34;
-  height: 30%;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 25px;
+  text-align: center;
 }
-
-.main-footer h3, .main-footer h2 {
-  color: #E5C7AB;
+.main-footer div i.fa-brands {
+  font-size: 25px;
+}
+.main-footer .footer-column-right .social-media-icon-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.main-footer h3,
+.main-footer h2 {
+  color: #e5c7ab;
 }
 
 .fa-brands {
@@ -167,3 +178,10 @@ main .start-content .product-container .category-price {
   color: white;
 }
 /*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 500px) {
+  .main-footer {
+    flex-direction: column-reverse;
+    gap: 25px;
+  }
+}
