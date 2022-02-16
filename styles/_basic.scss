@@ -20,25 +20,38 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    a {
-      @include booktuary-font;
-      color: $accent-color;
-      text-decoration: none;
-      font-weight: 350;
-    }
+    .login-nav{ //*Kev ändringar
+      width: 30%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      margin-right: 10px;
+      a {
+        @include booktuary-font;
+        color: $accent-color;
+        text-decoration: none;
+        font-weight: 350;
+      }
+
+    } //* slut på ändringar, flyttade a{...} inuti bara för att det ska vara konsekvent
+
+    
   }
 
 
-  .logo {
-    width: 30%;
-    height: auto;
-  }
+  .logo { //* Kev ändringar, fixar så att loggan är rimligt stor
+    width: 20%;
+    height: 20%;
+  } //* slut på ändringar
 
 
   .nav-wrapper {
     text-align: center;
     width: 100%;
-    .header-nav {
+    .header-nav { //*Kev ändringar
+      display:flex;
+      justify-content: space-around;
+      //* slut på kevs ändringar, gör att det finns mellanrum
       a {
         color: $accent-color;
         @include booktuary-font;
@@ -154,6 +167,10 @@ main {
   .main-footer {
     flex-direction: column-reverse;
     gap: 25px;
+  }
+
+  .logo-link-wrapper .login-nav .hidden{  //* Kev, testar med hidden klassen så att texten försvinner i mobile format
+    display: none;
   }
 }
 
