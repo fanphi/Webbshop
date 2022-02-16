@@ -180,7 +180,7 @@ main .start-content .product-container .category-price {
   gap: 10px;
 }
 
-.main-footer h3, .main-footer h2, .main-footer .footer-copyright-text {
+.main-footer p, .main-footer h2, .main-footer .footer-copyright-text {
   color: #E5C7AB;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
