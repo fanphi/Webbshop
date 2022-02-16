@@ -115,9 +115,11 @@ main {
     }
     .start-info{
       font-size: 20px;
+      text-align: center;
       @media screen and (min-width:500px){
         margin-top: 15px;
         font-size: 25px;
+        
         
       }
     }
@@ -222,7 +224,7 @@ main {
 
 
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
   .main-footer {
     flex-direction: column-reverse;
     gap: 25px;

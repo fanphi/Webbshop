@@ -160,6 +160,7 @@ main .start-headline h1 {
 
 main .start-headline .start-info {
   font-size: 20px;
+  text-align: center;
 }
 
 @media screen and (min-width: 500px) {
@@ -292,7 +293,7 @@ main .start-content .product-container .category-price {
   color: blanchedalmond;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (max-width: 500px) {
   .main-footer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
