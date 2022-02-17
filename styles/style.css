@@ -51,8 +51,8 @@
 }
 
 .main-header .logo-link-wrapper .login-nav a {
-  font-family: 'Josefin Sans', sans-serif;
-  color: #E5C7AB;
+  font-family: "Josefin Sans", sans-serif;
+  color: #e5c7ab;
   text-decoration: none;
   font-weight: 350;
 }
@@ -76,8 +76,8 @@
 }
 
 .main-header .nav-wrapper .header-nav a {
-  color: #E5C7AB;
-  font-family: 'Josefin Sans', sans-serif;
+  color: #e5c7ab;
+  font-family: "Josefin Sans", sans-serif;
   font-size: medium;
   text-decoration: none;
   font-weight: 350;
@@ -85,7 +85,7 @@
 }
 
 .btn {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: normal;
   font-size: medium;
   padding: 8px;
@@ -93,7 +93,7 @@
   cursor: pointer;
   border: 1px solid #131313;
   border-radius: 5px;
-  background-color: #E5C7AB;
+  background-color: #e5c7ab;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   height: 40px;
@@ -118,8 +118,8 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background-color: #E7BD70;
-  height: 500px;
+  background-color: #e7bd70;
+  min-height: 500px;
 }
 
 @media screen and (min-width: 500px) {
@@ -147,7 +147,7 @@ main .start-headline {
 }
 
 main .start-headline h1 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   font-size: 30px;
   font-weight: normal;
 }
@@ -173,6 +173,7 @@ main .start-headline .start-info {
 main .start-content {
   width: 100%;
   margin-top: 20px;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,16 +186,13 @@ main .start-content {
 }
 
 main .start-content .product-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 25px;
+  width: 90%;
+  justify-items: center;
 }
 
 @media screen and (min-width: 500px) {
@@ -278,6 +276,7 @@ main .start-content .product-container .category-price {
           justify-content: center;
   gap: 10px;
 }
+
 
 .main-footer h2, .main-footer p, .main-footer .footer-copyright-text {
   color: #E5C7AB;
