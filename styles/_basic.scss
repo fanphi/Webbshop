@@ -91,8 +91,12 @@ main {
   justify-content: flex-start;
   background-color: $logo-color;
   height: 500px;
+  @media screen and (min-width: 500px) {
+    height: 600px;
+   
+  }
  
-
+// Fanny styling för innehåll startsida. Både mobil och desktop
   .start-headline {
     margin-top: 30px;
     width: 100%;
@@ -104,9 +108,20 @@ main {
       @include booktuary-font;
       font-size: 30px;
       font-weight:normal;
+      @media screen and(min-width:500px) {
+        font-size: 40px;
+        
+      }
     }
     .start-info{
       font-size: 20px;
+      text-align: center;
+      @media screen and (min-width:500px){
+        margin-top: 15px;
+        font-size: 25px;
+        
+        
+      }
     }
   }
 
@@ -125,6 +140,10 @@ main {
       // justify-content: center;
       align-items: center;
       flex-direction: column;
+      @media screen and (min-width: 500px) {
+        margin-top: 30px;
+        
+      }
 
       .img-frame{
 
@@ -135,11 +154,20 @@ main {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media screen and (min-width: 500px){
+        height: 300px;
+        width: 250px;
+      }
       }
 
       .book-img{
         width: 145px;
         height: 210px;
+        @media  screen and (min-width: 500px) {
+          height: 280px;
+          width:215px ;
+          
+        }
       }
 
       .book-title{
@@ -211,5 +239,6 @@ main {
   .logo-link-wrapper .login-nav .hidden{  //* Kev, testar med hidden klassen så att texten försvinner i mobile format
     display: none;
   }
+
 }
 

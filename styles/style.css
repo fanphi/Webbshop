@@ -122,6 +122,12 @@ main {
   height: 500px;
 }
 
+@media screen and (min-width: 500px) {
+  main {
+    height: 600px;
+  }
+}
+
 main .start-headline {
   margin-top: 30px;
   width: 100%;
@@ -146,8 +152,22 @@ main .start-headline h1 {
   font-weight: normal;
 }
 
+@media screen and (min-width: 500px) {
+  main .start-headline h1 {
+    font-size: 40px;
+  }
+}
+
 main .start-headline .start-info {
   font-size: 20px;
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  main .start-headline .start-info {
+    margin-top: 15px;
+    font-size: 25px;
+  }
 }
 
 main .start-content {
@@ -177,6 +197,12 @@ main .start-content .product-container {
           flex-direction: column;
 }
 
+@media screen and (min-width: 500px) {
+  main .start-content .product-container {
+    margin-top: 30px;
+  }
+}
+
 main .start-content .product-container .img-frame {
   background: blanchedalmond;
   height: 230px;
@@ -192,9 +218,23 @@ main .start-content .product-container .img-frame {
           align-items: center;
 }
 
+@media screen and (min-width: 500px) {
+  main .start-content .product-container .img-frame {
+    height: 300px;
+    width: 250px;
+  }
+}
+
 main .start-content .product-container .book-img {
   width: 145px;
   height: 210px;
+}
+
+@media screen and (min-width: 500px) {
+  main .start-content .product-container .book-img {
+    height: 280px;
+    width: 215px;
+  }
 }
 
 main .start-content .product-container .book-title {
