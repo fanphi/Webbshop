@@ -250,7 +250,7 @@ main .start-content .product-container .category-price {
 
 .main-footer {
   background: #7e4b34;
-  height: 30%;
+  height: 300%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -279,10 +279,10 @@ main .start-content .product-container .category-price {
   gap: 10px;
 }
 
-.main-footer h3, .main-footer h2, .main-footer .footer-copyright-text {
+.main-footer h2, .main-footer p, .main-footer .footer-copyright-text {
   color: #E5C7AB;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .fa-brands {
