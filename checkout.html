@@ -34,30 +34,34 @@
         </nav>
       </div>
     </header>
-    <main>
-      <section class="start-headline">
-        <h1 class="start-h1">BOOKTUARY</h1>
-        <p class="start-info">Welcome to our brand new bookstore!</p>
-      </section>
-      <section class="start-content">
-        <div id="productContainer" class="product-container">
-          <div class="product">
-            <div class="img-frame">
-              <img class="book-img" src="" alt="" />
-            </div>
-            <h2 class="book-title">Foundation</h2>
-            <h3 class="category-price">1500 kr</h3>
-            <button class="buy btn">ADD TO CART</button>
-          </div>
-        </div>
-      </section>
+    <main class="checkout-main">
+      <section>
+     <h1 class="checkout-h1">CHECKOUT</h1>
+     <form action="" class="checkout-form">
+       <label for="name-checkout-input">Full name*</label>
+       <input type="text" id="name-checkout-input">
+       <label for="address-checkout-input">Address*</label>
+       <input type="text" id="address-checkout-input">
+       <label for="postal-checkout-input">Postal code*</label>
+       <input type="text" id="postal-checkout-input">
+       <label for="city-checkout-input">City*</label>
+       <input type="text" id="city-checkout-input">
+       <label for="email-checkout-input">Email*</label>
+       <input type="text" id="email-checkout-input">
+       <p>*required. These fields must be filled out to procceed. </p>
+       <button class="checkout-form-btn btn">CONFIRM</button>
+      <div class="checkout-p-div"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
+      </div>
+      
+     </form>
+    </section>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">
-        <h2 class="footer-left-title">Booktuary</h2>
+        <h2 class="footer-left-title">Bookstore</h2>
         <p class="footer-left-adress">Tulegatan-121</p>
         <p class="footer-left-adress">11386-Stockholm</p>
-        <p class="e-mail">booktuary@gmail.com</p>
+        <p class="e-mail">bookstore@gmail.com</p>
         
       </div>
       <div class="footer-column-middle">
@@ -77,7 +81,7 @@
           <p class="footer-cookies-text"><br>
             We use cookies to give best service
           <p>
-          <p class="footer-copyright-text">&copy;2022 Booktuary</p>
+          <p class="footer-copyright-text">&copy;2022 Bookstore</p>
         </div>
       </div>
     </footer>

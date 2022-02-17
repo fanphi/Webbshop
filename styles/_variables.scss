@@ -16,3 +16,10 @@ $lighter-color: hsl(0, 5%, 24%);
   font-family: "Josefin Sans", sans-serif;
 }
 //@include booktuary-font;
+
+@mixin inputfield-styling {
+  border-radius: 3px;
+  border: none;
+  height: 1.3rem;
+}
+//@include inputfield-styling;
