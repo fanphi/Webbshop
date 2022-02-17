@@ -156,11 +156,11 @@ main {
       .book-img {
         width: 145px;
         height: 210px;
-        @media  screen and (min-width: 500px) {
-          height: 280px;
-          width:215px ;
+        // @media  screen and (min-width: 500px) {
+        //   height: 280px;
+        //   width:215px ;
           
-        }
+        // }
       }
 
       .book-title {
@@ -213,7 +213,7 @@ main {
   color: blanchedalmond;
 }
 
-@media screen and (max-width: 500px) {
+ @media screen and (max-width: 500px) {
   .main-footer {
     flex-direction: column-reverse;
     gap: 25px;
