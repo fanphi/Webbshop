@@ -35,33 +35,32 @@
       </div>
     </header>
     <main class="checkout-main">
-      <section>
+      <section class="checkout-wrapper">
      <h1 class="checkout-h1">CHECKOUT</h1>
      <form action="" class="checkout-form">
        <label for="name-checkout-input">Full name*</label>
-       <input type="text" id="name-checkout-input">
+       <input type="name" id="name-checkout-input" required class="checkout-input">
        <label for="address-checkout-input">Address*</label>
-       <input type="text" id="address-checkout-input">
+       <input type="address" id="address-checkout-input" required class="checkout-input">
        <label for="postal-checkout-input">Postal code*</label>
-       <input type="text" id="postal-checkout-input">
+       <input type="text" pattern="[0-9]*" id="postal-checkout-input" required class="checkout-input">
        <label for="city-checkout-input">City*</label>
-       <input type="text" id="city-checkout-input">
+       <input type="text" id="city-checkout-input" class="checkout-input">
        <label for="email-checkout-input">Email*</label>
-       <input type="text" id="email-checkout-input">
+       <input type="email" id="email-checkout-input" class="checkout-input">
        <p>*required. These fields must be filled out to procceed. </p>
-       <button class="checkout-form-btn btn">CONFIRM</button>
-      <div class="checkout-p-div"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
-      </div>
-      
+       <button class="checkout-form-btn btn">CONFIRM</button> 
+       <div class="checkout-p-div"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
+       </div> 
      </form>
     </section>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">
-        <h2 class="footer-left-title">Bookstore</h2>
+        <h2 class="footer-left-title">Booktuary</h2>
         <p class="footer-left-adress">Tulegatan-121</p>
         <p class="footer-left-adress">11386-Stockholm</p>
-        <p class="e-mail">bookstore@gmail.com</p>
+        <p class="e-mail">booktuary@gmail.com</p>
         
       </div>
       <div class="footer-column-middle">
@@ -81,7 +80,7 @@
           <p class="footer-cookies-text"><br>
             We use cookies to give best service
           <p>
-          <p class="footer-copyright-text">&copy;2022 Bookstore</p>
+          <p class="footer-copyright-text">&copy;2022 Booktuary</p>
         </div>
       </div>
     </footer>
