@@ -16,65 +16,52 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-          <a href="./login.html"><i class="fa-solid fa-user"></i></a>
-          <a class="hidden" href="./login.html">Sign up/ Log in</a>
+          <i class="fa-solid fa-user"></i>
+          <a class="hidden" href="">Sign up/ Log in</a>
           <!-- adderar hidden class till länkarna-->
           <br />
-          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+          <i class="fa-solid fa-cart-shopping"></i>
           <a class="hidden" href="">Shopping cart</a>
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
       <div class="nav-wrapper">
-      <nav class="header-nav">
-           <a href="./index.html">Start </a>
-           <a href="./category.html">Classics</a>
-           <a href="">Science</a>
-           <a href="">Poetry</a>
-      </nav>
-    </div>
-  </header>
-  <!-- <main>
-    
         <nav class="header-nav">
-          <a href="">Start</a>
-          <a href="">Classics</a>
-          <a href="">Science</a>
-          <a href="">Poetry</a>
+          <a href="?category=poetry">Start </a>
+          <a href="?category=classics">Classics</a>
+          <a href="?category=science">Science</a>
+          <a href="?category=poetry">Poetry</a>
         </nav>
-      </div> 
-    </header>  -->
-    <main>
-      <!-- <section class="start-headline">
-        <h1 class="start-h1">CLASSICS</h1>
-        <p class="start-info">Here you can find our selection of classical literature.</p>
-      </section>
-      <section class="start-content">
-        <div class="product-container">
-          <div class="img-frame">
-            <img class="book-img" src="" alt="" />
-          </div>
-          <h2 class="book-title">Foundation</h2>
-          <h3 class="category-price">1500 kr</h3>
-          <button class="buy btn">ADD TO CART</button>
-        </div>
-      </section> -->
-      <div class="login-box">
-        <label for="user-name">Username</label>
-        <input type="text" class="username" id="user-name" placeholder="John Doe">
-        <br>
-        <label for="user-pass">Password</label>
-        <input type="password" class="password" id="user-pass" placeholder="*******">
-        <br>
-        <button class="login-button btn">Log in</button>
       </div>
+    </header>
+    <main>
+        <section class="form-wrapper">
+        <h2>Create new account</h2>
+        <form id="createUser" class="userform">
+            <label for="name">Full name* </label>
+            <input type="name" id="name" required class="input-field">
+            <label for="address">Address*</label>
+            <input type="address" id="address" required class="input-field">
+            <label for="zipcode">Postal code*</label>
+            <input type="text" id="zipcode" pattern="[0-9]*" required class="input-field">
+            <label for="city">City*</label>
+            <input type="text" id="city" required class="input-field">
+            <label for="userEmail">Email*</label>
+            <input type="email" id="userEmail" required class="input-field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" class="input-field">
+            <label for="userPassword">Password*</label>
+            <input type="password" id="userPassword" required class="input-field">
+            <button class="create btn" id="createbtn">Create account</button>
+        </form>
+    </section>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">
-        <h2 class="footer-left-title">Bookstore</h2>
+        <h2 class="footer-left-title">Booktuary</h2>
         <p class="footer-left-adress">Tulegatan-121</p>
         <p class="footer-left-adress">11386-Stockholm</p>
-        <p class="e-mail">bookstore@gmail.com</p>
+        <p class="e-mail">booktuary@gmail.com</p>
         
       </div>
       <div class="footer-column-middle">
@@ -94,11 +81,10 @@
           <p class="footer-cookies-text"><br>
             We use cookies to give best service
           <p>
-          <p class="footer-copyright-text">&copy;2022 Bookstore</p>
+          <p class="footer-copyright-text">&copy;2022 Booktuary</p>
         </div>
       </div>
-    </footer> 
+    </footer>
     <script src="main.js"></script>
   </body>
-  <script></script> <!-- det finns 2 script taggar som man ser, ska man ta bort det-->
 </html>
