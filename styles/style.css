@@ -122,12 +122,6 @@ main {
   min-height: 500px;
 }
 
-@media screen and (min-width: 500px) {
-  main {
-    height: 600px;
-  }
-}
-
 main .start-headline {
   margin-top: 30px;
   width: 100%;
@@ -195,12 +189,6 @@ main .start-content .product-container {
   justify-items: center;
 }
 
-@media screen and (min-width: 500px) {
-  main .start-content .product-container {
-    margin-top: 30px;
-  }
-}
-
 main .start-content .product-container .img-frame {
   background: blanchedalmond;
   height: 230px;
@@ -216,23 +204,9 @@ main .start-content .product-container .img-frame {
           align-items: center;
 }
 
-@media screen and (min-width: 500px) {
-  main .start-content .product-container .img-frame {
-    height: 300px;
-    width: 250px;
-  }
-}
-
 main .start-content .product-container .book-img {
   width: 145px;
   height: 210px;
-}
-
-@media screen and (min-width: 500px) {
-  main .start-content .product-container .book-img {
-    height: 280px;
-    width: 215px;
-  }
 }
 
 main .start-content .product-container .book-title {
@@ -248,7 +222,6 @@ main .start-content .product-container .category-price {
 
 .main-footer {
   background: #7e4b34;
-  height: 300%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -277,10 +250,9 @@ main .start-content .product-container .category-price {
   gap: 10px;
 }
 
-
 .main-footer h2, .main-footer p, .main-footer .footer-copyright-text {
-  color: #E5C7AB;
-  font-family: 'Josefin Sans', sans-serif;
+  color: #e5c7ab;
+  font-family: "Josefin Sans", sans-serif;
   font-weight: 300;
 }
 
