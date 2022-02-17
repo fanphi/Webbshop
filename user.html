@@ -35,22 +35,26 @@
       </div>
     </header>
     <main>
-      <section class="start-headline">
-        <h1 class="start-h1">BOOKTUARY</h1>
-        <p class="start-info">Welcome to our brand new bookstore!</p>
-      </section>
-      <section class="start-content">
-        <div id="productContainer" class="product-container">
-          <div class="product">
-            <div class="img-frame">
-              <img class="book-img" src="" alt="" />
-            </div>
-            <h2 class="book-title">Foundation</h2>
-            <h3 class="category-price">1500 kr</h3>
-            <button class="buy btn">ADD TO CART</button>
-          </div>
-        </div>
-      </section>
+        <section class="form-wrapper">
+        <h2>Create new account</h2>
+        <form id="createUser" class="userform">
+            <label for="name">Full name* </label>
+            <input type="name" id="name" required class="input-field">
+            <label for="address">Address*</label>
+            <input type="address" id="address" required class="input-field">
+            <label for="zipcode">Postal code*</label>
+            <input type="text" id="zipcode" pattern="[0-9]*" required class="input-field">
+            <label for="city">City*</label>
+            <input type="text" id="city" required class="input-field">
+            <label for="userEmail">Email*</label>
+            <input type="email" id="userEmail" required class="input-field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" class="input-field">
+            <label for="userPassword">Password*</label>
+            <input type="password" id="userPassword" required class="input-field">
+            <button class="create btn" id="createbtn">Create account</button>
+        </form>
+    </section>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">
