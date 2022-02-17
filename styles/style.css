@@ -220,54 +220,6 @@ main .start-content .product-container .category-price {
   margin-bottom: 10px;
 }
 
-.checkout-h1 {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 30px;
-  font-weight: normal;
-  margin: 30px 0;
-}
-
-@media screen and (min-width: 500px) {
-  .checkout-h1 {
-    font-size: 40px;
-  }
-}
-
-.checkout-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 30px;
-}
-
-.checkout-form input {
-  width: 60%;
-  height: 30px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 0px;
-}
-
-.checkout-form .checkout-form-btn {
-  margin-top: 20px;
-}
-
-.checkout-form p {
-  text-align: center;
-}
-
-.checkout-form .checkout-p-div {
-  width: 60%;
-  margin: 20px 0px;
-}
-
 .main-footer {
   background: #7e4b34;
   display: -webkit-box;
@@ -380,5 +332,70 @@ main .start-content .product-container .category-price {
 
 .form-wrapper .userform .create.btn {
   margin: 8% 0%;
+}
+
+.checkout-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 5%;
+}
+
+.checkout-wrapper .checkout-h1 {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 5% 0%;
+}
+
+.checkout-wrapper .checkout-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 75%;
+  font-size: small;
+}
+
+.checkout-wrapper .checkout-form .input-field {
+  border-radius: 3px;
+  border: none;
+  height: 1.3rem;
+}
+
+.checkout-wrapper .checkout-form .checkout-form-btn {
+  margin-top: 20px;
+}
+
+.checkout-wrapper .checkout-form p {
+  text-align: center;
+  width: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.checkout-wrapper .checkout-p-span {
+  width: 50%;
+  margin-top: 5%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */

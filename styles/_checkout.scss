@@ -1,0 +1,46 @@
+//Fanny styling checkout form
+
+.checkout-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+
+.checkout-h1{
+    @include booktuary-font;
+    margin: 5% 0%;
+  }
+
+  .checkout-form{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    font-size: small;
+  
+    .input-field{
+        @include inputfield-styling;
+    }
+  
+    .checkout-form-btn{
+      margin-top: 20px;
+    }
+    p{
+      text-align: center;
+      width: 50%;
+      align-self: center;
+    }
+  
+  
+  }
+
+  .checkout-p-span{
+  width: 50%;
+    margin-top: 5%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+   
+   }
+}
+
