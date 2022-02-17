@@ -152,10 +152,6 @@ main {
       .book-img {
         width: 145px;
         height: 210px;
-        @media screen and (min-width: 500px) {
-          height: 280px;
-          width: 215px;
-        }
       }
 
       .book-title {
@@ -174,8 +170,6 @@ main {
 
 .main-footer {
   background: #7e4b34;
-  height: 300%;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
