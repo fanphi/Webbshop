@@ -220,40 +220,6 @@ main .start-content .product-container .category-price {
   margin-bottom: 10px;
 }
 
-main .login-box {
-  margin-top: 30px;
-  width: 380px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-main .login-box .username, main .login-box .password {
-  font-size: 18px;
-  height: auto;
-  padding: 11px 45px 12px 40px;
-  border-radius: 3px;
-  border: none;
-}
-
-main .login-box .login-button {
-  font-size: 16px;
-  font-weight: 700;
-  height: 48px;
-  margin-bottom: 16px;
-  width: 82%;
-}
-
 .main-footer {
   background: #7e4b34;
   display: -webkit-box;
@@ -366,6 +332,50 @@ main .login-box .login-button {
 
 .form-wrapper .userform .create.btn {
   margin: 8% 0%;
+}
+
+main .login-box {
+  margin-top: 30px;
+  width: 380px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .login-box label, main .login-box h2 {
+  margin-bottom: 10px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main .login-box a, main .login-box p {
+  display: inline-block;
+}
+
+main .login-box .username, main .login-box .password {
+  font-size: 18px;
+  height: auto;
+  padding: 11px 45px 12px 40px;
+  border-radius: 3px;
+  border: none;
+}
+
+main .login-box .login-button {
+  font-size: 16px;
+  font-weight: 700;
+  height: 48px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 82%;
 }
 
 .checkout-wrapper {

@@ -1,0 +1,38 @@
+main{
+  //* Kev styling för login sida, work in progress
+  .login-box{
+    margin-top: 30px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    label, h2{
+      margin-bottom: 10px;
+      @include booktuary-font;
+    }
+
+    a,p{
+      display: inline-block;
+    }
+
+    .username, .password{
+      font-size: 18px;
+      height: auto;
+      padding: 11px 45px 12px 40px;
+      border-radius: 3px;
+      border: none;
+
+      // @include inputfield-styling;
+    }
+    .login-button{
+      font-size: 16px;
+      font-weight: 700;
+      height: 48px;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      width: 82%;
+    }
+  }
+}
