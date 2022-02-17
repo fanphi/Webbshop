@@ -39,20 +39,20 @@
      <h1 class="checkout-h1">CHECKOUT</h1>
      <form action="" class="checkout-form">
        <label for="name-checkout-input">Full name*</label>
-       <input type="text" id="name-checkout-input" class="input-field">
+       <input type="name" id="name-checkout-input" required class="checkout-input">
        <label for="address-checkout-input">Address*</label>
-       <input type="text" id="address-checkout-input" class="input-field">
+       <input type="address" id="address-checkout-input" required class="checkout-input">
        <label for="postal-checkout-input">Postal code*</label>
-       <input type="text" id="postal-checkout-input" class="input-field">
+       <input type="text" pattern="[0-9]*" id="postal-checkout-input" required class="checkout-input">
        <label for="city-checkout-input">City*</label>
-       <input type="text" id="city-checkout-input" class="input-field">
+       <input type="text" id="city-checkout-input" class="checkout-input">
        <label for="email-checkout-input">Email*</label>
-       <input type="text" id="email-checkout-input" class="input-field">
+       <input type="email" id="email-checkout-input" class="checkout-input">
        <p>*required. These fields must be filled out to procceed. </p>
        <button class="checkout-form-btn btn">CONFIRM</button> 
+       <div class="checkout-p-div"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
+       </div> 
      </form>
-     <span class="checkout-p-span"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
-     </span>
     </section>
     </main>
     <footer class="main-footer">

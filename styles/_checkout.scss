@@ -9,38 +9,39 @@
 
 .checkout-h1{
     @include booktuary-font;
-    margin: 5% 0%;
+   margin: 3% 0 5% 0;
   }
 
   .checkout-form{
     display: flex;
     flex-direction: column;
-    width: 75%;
+    width: 40%;
     font-size: small;
   
-    .input-field{
+    .checkout-input{
         @include inputfield-styling;
+        margin-bottom: 5%;   
     }
   
     .checkout-form-btn{
-      margin-top: 20px;
+      margin-top: 10%;
+      align-self: center;
+
     }
     p{
       text-align: center;
-      width: 50%;
       align-self: center;
     }
   
   
   }
 
-  .checkout-p-span{
-  width: 50%;
-    margin-top: 5%;
+  .checkout-p-div{
+    margin: 10% 0;
     align-self: center;
     display: flex;
     justify-content: center;
-   
+    
    }
 }
 
