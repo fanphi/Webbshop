@@ -38,8 +38,8 @@
 
   .logo {
     //* Kev ändringar, fixar så att loggan är rimligt stor
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
   } //* slut på ändringar
 
   .nav-wrapper {
@@ -166,6 +166,29 @@ main {
       }
     }
   }
+
+  //* Kev styling för login sida, work in progress
+  .login-box{
+    margin-top: 30px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .username, .password{
+      font-size: 18px;
+      height: auto;
+      padding: 11px 45px 12px 40px;
+    }
+    .login-button{
+      font-size: 16px;
+      font-weight: 700;
+      height: 48px;
+      margin-bottom: 16px;
+      width: 82%;
+    }
+  }
 }
 
 .main-footer {
@@ -210,7 +233,7 @@ main {
   }
 
   .logo {
-    width: 40%;
+    width: 40%; 
     height: auto;
   }
   .logo-link-wrapper .login-nav .hidden {
