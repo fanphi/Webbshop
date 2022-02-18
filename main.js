@@ -36,56 +36,44 @@ function readJson() {
       productWrapper.innerHTML = "";
 
       if (bookId) {
-        generateProductPage(json);
-      } else if (!categoryId) {
-        generateCategory(json);
-      } else {
-        generateProducts(json);
-        document.querySelector(".filter-section").classList.add("visible");
-      }
-
-      const buyButton = document.querySelectorAll(".buy");
-      const searchFilter = document.getElementById("searchInput");
-
-      searchFilter.addEventListener("keyup", (event) => {
-        filter();
-      });
-
-      buyButton.forEach((el) =>
-        el.addEventListener("click", (event) => {
-          addToCart(el.getAttribute("book-id"));
-        })
-      );
-
-      function filter() {
-        let value = searchFilter.value;
-        var filter = value.toUpperCase();
-
-        var list = document.getElementById("productContainer");
-        var divs = list.getElementsByTagName("div");
-        for (var i = 0; i < divs.length; i++) {
-          var a = divs[i].getElementsByTagName("h2")[0];
-          var b = divs[i].getElementsByTagName("h3")[0];
-
-          if (a || b) {
-            if (
-              a.innerHTML.toUpperCase().indexOf(filter) > -1 ||
-              b.innerHTML.toUpperCase().indexOf(filter) > -1
-            ) {
-              divs[i].classList.add("visible-categ");
-              divs[i].classList.remove("hidden-categ");
-            } else {
-              divs[i].classList.add("hidden-categ");
-              divs[i].classList.remove("visible-categ");
+        var generateProduct = json.categories.forEach((item) => {
+          const names = item.books.map((product) => ({
+            name: product.title,
+            auth: product.author,
+            price: product.price,
+            src: product.bookImage,
+            id: product.id,
+            categ: product.category,
+            desc: product.desc,
+          }));
+          names.forEach((item) => {
+            if (item.id === bookId) {
+              const newProduct = `<div class="product-info-container"><div class="product book-page">
+              <div class="product-image-container"><img class="book-img" src="${item.src}"</img></div>
+            <div class="text-container-product-page"><div class="title-container"><h2 class="book-title">${item.name}, ${item.auth}</h2>
+            <h3 class="category-price"><a class="category-link" href="index.html?category=${item.categ}">${item.categ}</a> ${item.price} kr</h3></div><div class="desc-container"><p class="book-desc-text">${item.desc}</div></div>
+            </div><div class="buy-button-container product-info-page"> <button book-id="${item.id}" class="buy btn">ADD TO CART</button></div></div>`;
+              productWrapper.insertAdjacentHTML("beforeend", newProduct);
             }
-          }
-        }
-      }
+          });
+        });
 
-      function generateProducts(data) {
-        var generateProduct = data.categories.forEach((item) => {
+        console.log(json.categories);
+      } else if (!categoryId) {
+        const categoryCount = json.categories;
+        console.log(categoryCount);
+        categoryCount.forEach((item) => {
+          const newCategory = `<div class="category-container"><a class="select-category" href="index.html?category=${item.categoryName}" ><div class="product">
+          <div class="img-frame category-frame"><div class="image-container"><img class="book-img" src="${item.categoryBgImage}"></img></div><div class="categ-title-container">
+          <h2 class="categ-title">${item.categoryName}</h2>
+          <p class="categ-desc">${item.desc}</p></div></div>
+        </div></a></div>`;
+          productWrapper.insertAdjacentHTML("beforeend", newCategory);
+        });
+        var categorySelect = document.querySelectorAll(".category-container");
+      } else {
+        var generateProduct = json.categories.forEach((item) => {
           if (item.categoryName == categoryId) {
-            console.log(item.books);
             const names = item.books.map((product) => ({
               name: product.title,
               author: product.author,
@@ -108,43 +96,13 @@ function readJson() {
         });
       }
 
-      function generateCategory(data) {
-        const categoryCount = data.categories;
-        console.log(categoryCount);
-        categoryCount.forEach((item) => {
-          const newCategory = `<div class="category-container"><a class="select-category" href="index.html?category=${item.categoryName}" ><div class="product">
-          <div class="img-frame category-frame"><div class="image-container"><img class="book-img" src="${item.categoryBgImage}"></img></div><div class="categ-title-container">
-          <h2 class="categ-title">${item.categoryName}</h2>
-          <p class="categ-desc">${item.desc}</p></div></div>
-        </div></a></div>`;
-          productWrapper.insertAdjacentHTML("beforeend", newCategory);
-        });
-        var categorySelect = document.querySelectorAll(".category-container");
-      }
+      const buyButton = document.querySelectorAll(".buy");
 
-      function generateProductPage(data) {
-        var generateProduct = data.categories.forEach((item) => {
-          const names = item.books.map((product) => ({
-            name: product.title,
-            auth: product.author,
-            price: product.price,
-            src: product.bookImage,
-            id: product.id,
-            categ: product.category,
-            desc: product.desc,
-          }));
-          names.forEach((item) => {
-            if (item.id === bookId) {
-              const newProduct = `<div class="product-info-container"><div class="product book-page">
-              <div class="product-image-container"><img class="book-img" src="${item.src}"</img></div>
-            <div class="text-container-product-page"><div class="title-container"><h2 class="book-title">${item.name}, ${item.auth}</h2>
-            <h3 class="category-price"><a class="category-link" href="index.html?category=${item.categ}">${item.categ}</a> ${item.price} kr</h3></div><div class="desc-container"><p class="book-desc-text">${item.desc}</div></div>
-            </div><div class="buy-button-container product-info-page"> <button book-id="${item.id}" class="buy btn">ADD TO CART</button></div></div>`;
-              productWrapper.insertAdjacentHTML("beforeend", newProduct);
-            }
-          });
-        });
-      }
+      buyButton.forEach((el) =>
+        el.addEventListener("click", (event) => {
+          addToCart(el.getAttribute("book-id"));
+        })
+      );
     })
     .catch(function () {
       console.log("error");
