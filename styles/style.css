@@ -381,4 +381,8 @@ main .start-content .product-container .category-price {
 .form-wrapper .userform .create.btn {
   margin: 8% 0%;
 }
+
+.form-wrapper .userform p {
+  margin-top: 3%;
+}
 /*# sourceMappingURL=style.css.map */
