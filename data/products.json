@@ -3,6 +3,7 @@
     {
       "categoryName": "poetry",
       "categoryBgImage": "./img/poetry1.jfif",
+      "desc": "eu blandit nulla aliquet. Cras auctor efficitur ",
       "books": [
         {
           "title": "Samlade dikter",
@@ -55,6 +56,7 @@
     {
       "categoryName": "science",
       "categoryBgImage": "./img/poetry1.jfif",
+      "desc": "eu blandit nulla aliquet. Cras auctor efficitur ",
       "books": [
         {
           "title": "Entangled life",
@@ -106,6 +108,7 @@
     {
       "categoryName": "classics",
       "categoryBgImage": "./img/poetry1.jfif",
+      "desc": "eu blandit nulla aliquet. Cras auctor efficitur ",
       "books": [
         {
           "title": "Pride and prejudice",
