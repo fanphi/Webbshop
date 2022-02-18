@@ -57,6 +57,7 @@
         text-decoration: none;
         font-weight: 350;
         padding: 0px 10px;
+        text-transform: capitalize;
       }
     }
   }
@@ -148,6 +149,24 @@ main {
         justify-content: center;
         align-items: center;
       }
+      .img-frame.category-frame {
+        display: flex;
+        flex-direction: column;
+        height: unset;
+        min-height: 230px;
+        padding: 15px 0px;
+      }
+      .categ-title-container {
+        text-transform: uppercase;
+      }
+      .buy-button-container {
+        &.product-info-page {
+          text-align: right;
+        }
+      }
+      .select-category {
+        text-decoration: none;
+      }
 
       .book-img {
         width: 145px;
@@ -162,7 +181,50 @@ main {
       .category-price {
         font-size: large;
         font-style: oblique;
+        //margin-bottom: 10px;
+      }
+      .product {
+        display: flex;
+        flex-direction: column;
+        max-width: min-content;
+        &.book-page {
+          flex-direction: row;
+          background-color: white;
+          padding: 15px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          max-width: 400px;
+          @media screen and (max-width: 410px) {
+            flex-direction: column;
+          }
+        }
+        .title-container {
+          padding-bottom: 15px;
+          @media screen and (max-width: 410px) {
+            padding-bottom: 5px;
+          }
+        }
+      }
+      .text-container-product-page {
+        padding: 0px 15px;
+        .book-title {
+          margin: unset;
+        }
+        @media screen and (max-width: 410px) {
+          padding: 10px 0px 0px 0px;
+          margin-top: 10px;
+          border-top: 1px solid black;
+        }
+      }
+      .product-info-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .more-info {
         margin-bottom: 10px;
+      }
+      div a {
+        color: black;
       }
     }
   }
@@ -230,14 +292,14 @@ main {
   color: blanchedalmond;
 }
 
- @media screen and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .main-footer {
     flex-direction: column-reverse;
     gap: 25px;
   }
 
   .logo {
-    width: 40%; 
+    width: 40%;
     height: auto;
   }
   .logo-link-wrapper .login-nav .hidden {
