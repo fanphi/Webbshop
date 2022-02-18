@@ -82,6 +82,7 @@
   text-decoration: none;
   font-weight: 350;
   padding: 0px 10px;
+  text-transform: capitalize;
 }
 
 .btn {
@@ -204,6 +205,31 @@ main .start-content .product-container .img-frame {
           align-items: center;
 }
 
+main .start-content .product-container .img-frame.category-frame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: unset;
+  min-height: 230px;
+  padding: 15px 0px;
+}
+
+main .start-content .product-container .categ-title-container {
+  text-transform: uppercase;
+}
+
+main .start-content .product-container .buy-button-container.product-info-page {
+  text-align: right;
+}
+
+main .start-content .product-container .select-category {
+  text-decoration: none;
+}
+
 main .start-content .product-container .book-img {
   width: 145px;
   height: 210px;
@@ -217,7 +243,84 @@ main .start-content .product-container .book-title {
 main .start-content .product-container .category-price {
   font-size: large;
   font-style: oblique;
+}
+
+main .start-content .product-container .product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: -webkit-min-content;
+  max-width: -moz-min-content;
+  max-width: min-content;
+}
+
+main .start-content .product-container .product.book-page {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
   margin-bottom: 10px;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 410px) {
+  main .start-content .product-container .product.book-page {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+main .start-content .product-container .product .title-container {
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 410px) {
+  main .start-content .product-container .product .title-container {
+    padding-bottom: 5px;
+  }
+}
+
+main .start-content .product-container .text-container-product-page {
+  padding: 0px 15px;
+}
+
+main .start-content .product-container .text-container-product-page .book-title {
+  margin: unset;
+}
+
+@media screen and (max-width: 410px) {
+  main .start-content .product-container .text-container-product-page {
+    padding: 10px 0px 0px 0px;
+    margin-top: 10px;
+    border-top: 1px solid black;
+  }
+}
+
+main .start-content .product-container .product-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .start-content .product-container .more-info {
+  margin-bottom: 10px;
+}
+
+main .start-content .product-container div a {
+  color: black;
 }
 
 .main-footer {

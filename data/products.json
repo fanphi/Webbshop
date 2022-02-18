@@ -1,116 +1,158 @@
 {
-  "categories": {
-    "poetry": [
-      {
-        "title": "Samlade dikter",
-        "bookImage": "./img/poetry1.jfif",
-        "author": "Bodil Malmsten",
-        "price": 299,
-        "category": "poetry"
-      },
-      {
-        "title": "Samlade dikter",
-        "bookImage": "./img/poetry2.jfif",
-        "author": "Edith Södergran",
-        "price": 199,
-        "category": "poetry"
-      },
-      {
-        "title": "Samlade dikter",
-        "bookImage": "./img/poetry3.jfif",
-        "author": "Karin Boye",
-        "price": 199,
-        "category": "poetry"
-      },
+  "categories": [
+    {
+      "categoryName": "poetry",
+      "categoryBgImage": "./img/poetry1.jfif",
+      "books": [
+        {
+          "title": "Samlade dikter",
+          "bookImage": "./img/poetry1.jfif",
+          "author": "Bodil Malmsten",
+          "price": 299,
+          "category": "poetry",
+          "id": "7232",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "Samlade dikter",
+          "bookImage": "./img/poetry2.jfif",
+          "author": "Edith Södergran",
+          "price": 199,
+          "category": "poetry",
+          "id": "8124",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "Samlade dikter",
+          "bookImage": "./img/poetry3.jfif",
+          "author": "Karin Boye",
+          "price": 199,
+          "category": "poetry",
+          "id": "9823",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
 
-      {
-        "title": "Lord of the Butterflies",
-        "bookImage": "./img/poetry4.jfif",
-        "author": "Andrea Gibson",
-        "price": 299,
-        "category": "poetry"
-      },
-      {
-        "title": "Poems for a world gone to sh*t",
-        "bookImage": "./img/poetry5.jfif",
-        "author": "Various",
-        "price": 199,
-        "category": "poetry"
-      }
-    ],
-    "science": [
-      {
-        "title": "Entangled life",
-        "bookImage": "./img/science1.jfif",
-        "author": "Merlin Sheldrake",
-        "price": 299,
-        "category": "science"
-      },
-      {
-        "title": "Wicked plants",
-        "bookImage": "./img/science2.jfif",
-        "author": "Amy Stewart",
-        "price": 199,
-        "category": "science"
-      },
-      {
-        "title": "The drunken botanist",
-        "bookImage": "./img/science3.jfif",
-        "author": "Amy Stewart",
-        "price": 299,
-        "category": "science"
-      },
-      {
-        "title": "JavaScript for dummies",
-        "bookImage": "./img/science4.jfif",
-        "author": "Emily A. Vander Veer",
-        "price": 399,
-        "category": "science"
-      },
-      {
-        "title": "Laziness does not exist",
-        "bookImage": "./img/science5.jfif",
-        "author": "Devon Price, Ph.D.",
-        "price": 199,
-        "category": "science"
-      }
-    ],
-    "classics": [
-      {
-        "title": "Pride and prejudice",
-        "bookImage": "./img/classic1.jfif",
-        "author": "Jane Austen",
-        "price": 199,
-        "category": "classics"
-      },
-      {
-        "title": "The Great Gatsby",
-        "bookImage": "./img/classic2.jfif",
-        "author": "F. Scott Fitzgerald",
-        "price": 199,
-        "category": "classics"
-      },
-      {
-        "title": "Mrs Dalloway",
-        "bookImage": "./img/classic3.jfif",
-        "author": "Virginia Woolf",
-        "price": 199,
-        "category": "classics"
-      },
-      {
-        "title": "1984",
-        "bookImage": "./img/classic4.jfif",
-        "author": "George Orwell",
-        "price": 199,
-        "category": "classics"
-      },
-      {
-        "title": "Frankenstein",
-        "bookImage": "./img/classic5.jfif",
-        "author": "Mary Shelley",
-        "price": 199,
-        "category": "classics"
-      }
-    ]
-  }
+        {
+          "title": "Lord of the Butterflies",
+          "bookImage": "./img/poetry4.jfif",
+          "author": "Andrea Gibson",
+          "price": 299,
+          "category": "poetry",
+          "id": "5132",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "Poems for a world gone to sh*t",
+          "bookImage": "./img/poetry5.jfif",
+          "author": "Various",
+          "price": 199,
+          "category": "poetry",
+          "id": "7347",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        }
+      ]
+    },
+    {
+      "categoryName": "science",
+      "categoryBgImage": "./img/poetry1.jfif",
+      "books": [
+        {
+          "title": "Entangled life",
+          "bookImage": "./img/science1.jfif",
+          "author": "Merlin Sheldrake",
+          "price": 299,
+          "category": "science",
+          "id": "8329",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "Wicked plants",
+          "bookImage": "./img/science2.jfif",
+          "author": "Amy Stewart",
+          "price": 199,
+          "category": "science",
+          "id": "5215",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "The drunken botanist",
+          "bookImage": "./img/science3.jfif",
+          "author": "Amy Stewart",
+          "price": 299,
+          "category": "science",
+          "id": "6136",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "JavaScript for dummies",
+          "bookImage": "./img/science4.jfif",
+          "author": "Emily A. Vander Veer",
+          "price": 399,
+          "category": "science",
+          "id": "1677",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "Laziness does not exist",
+          "bookImage": "./img/science5.jfif",
+          "author": "Devon Price, Ph.D.",
+          "price": 199,
+          "category": "science",
+          "id": "7474",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        }
+      ]
+    },
+    {
+      "categoryName": "classics",
+      "categoryBgImage": "./img/poetry1.jfif",
+      "books": [
+        {
+          "title": "Pride and prejudice",
+          "bookImage": "./img/classic1.jfif",
+          "author": "Jane Austen",
+          "price": 199,
+          "category": "classics",
+          "id": "1255",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "The Great Gatsby",
+          "bookImage": "./img/classic2.jfif",
+          "author": "F. Scott Fitzgerald",
+          "price": 199,
+          "category": "classics",
+          "id": "3626",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "Mrs Dalloway",
+          "bookImage": "./img/classic3.jfif",
+          "author": "Virginia Woolf",
+          "price": 199,
+          "category": "classics",
+          "id": "2364",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "1984",
+          "bookImage": "./img/classic4.jfif",
+          "author": "George Orwell",
+          "price": 199,
+          "category": "classics",
+          "id": "6322",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        },
+        {
+          "title": "Frankenstein",
+          "bookImage": "./img/classic5.jfif",
+          "author": "Mary Shelley",
+          "price": 199,
+          "category": "classics",
+          "id": "7774",
+          "desc": " eu blandit nulla aliquet. Cras auctor efficitur nisi vel feugiat. Vivamus eu lorem nulla. Suspendisse ac convallis dui. Sed at augue sit amet enim rutrum fringilla at quis lorem."
+        }
+      ]
+    }
+  ]
 }
