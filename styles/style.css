@@ -334,6 +334,10 @@ main .start-content .product-container .category-price {
   margin: 8% 0%;
 }
 
+.form-wrapper .userform p {
+  margin-top: 3%;
+}
+
 main .login-box {
   margin-top: 30px;
   width: 380px;
