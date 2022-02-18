@@ -1,3 +1,20 @@
+function addToCart(bookId) {
+  var items = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  var item = items.find((item) => item.book === bookId);
+
+  if (item) {
+    item.count += 1;
+  } else {
+    items.push({
+      book: bookId,
+      count: 1,
+    });
+  }
+  localStorage.setItem("cartItems", JSON.stringify(items));
+  console.log(items);
+}
+
 function readJson() {
   fetch("./data/products.json")
     .then((response) => {
@@ -35,7 +52,7 @@ function readJson() {
               <div class="product-image-container"><img class="book-img" src="${item.src}"</img></div>
             <div class="text-container-product-page"><div class="title-container"><h2 class="book-title">${item.name}, ${item.auth}</h2>
             <h3 class="category-price"><a class="category-link" href="index.html?category=${item.categ}">${item.categ}</a> ${item.price} kr</h3></div><div class="desc-container"><p class="book-desc-text">${item.desc}</div></div>
-            </div><div class="buy-button-container product-info-page"> <button class="buy btn">ADD TO CART</button></div></div>`;
+            </div><div class="buy-button-container product-info-page"> <button book-id="${item.id}" class="buy btn">ADD TO CART</button></div></div>`;
               productWrapper.insertAdjacentHTML("beforeend", newProduct);
             }
           });
@@ -71,13 +88,21 @@ function readJson() {
             <h3 class="book-author">-${item.author}</h3>
             <h3 class="category-price">${item.price} kr</h3>
             <a class="more-info" href="product.html?bookid=${item.id}">More information</a>
-            <button class="buy btn">ADD TO CART</button>
+            <button book-id="${item.id}" class="buy btn">ADD TO CART</button>
           </div>`;
               productWrapper.insertAdjacentHTML("beforeend", newProduct);
             });
           }
         });
       }
+
+      const buyButton = document.querySelectorAll(".buy");
+
+      buyButton.forEach((el) =>
+        el.addEventListener("click", (event) => {
+          addToCart(el.getAttribute("book-id"));
+        })
+      );
     })
     .catch(function () {
       console.log("error");
@@ -86,20 +111,20 @@ function readJson() {
 readJson();
 
 // login form validation "amin"
-// const logInForm=document.querySelector(".login-box")
+const logInForm=document.querySelector(".login-box")
 
-// const userName=document.querySelector("#user-name")
-// const userPass=document.querySelector("#user-pass")
-// const logInButton= document.querySelector("#loginbtn")
+const userName=document.querySelector("#user-name")
+const userPass=document.querySelector("#user-pass")
+const logInButton= document.querySelector("#loginbtn")
 
-// const dispalyResult=document.querySelector(".log-in-display")
+const dispalyResult=document.querySelector(".log-in-display")
 
-// logInForm.addEventListener("submit",function(e){
-//   e.preventDefault();
-//   if (userName.value === ""){
-//     dispalyResult.innerHTML="You have to put inpute"
-//   }
+logInForm.addEventListener("submit",function(e){
+  e.preventDefault();
+  if (userName.value === ""){
+    dispalyResult.innerHTML="You have to put inpute"
+  }
  
 
-// })
+})
 

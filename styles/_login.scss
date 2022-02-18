@@ -1,6 +1,6 @@
 main{
   //* Kev styling för login sida, work in progress
-  .login-box{
+  .login-box, .login-form{
     margin-top: 30px;
     width: 380px;
     display: flex;
@@ -12,6 +12,10 @@ main{
       margin-bottom: 10px;
       @include booktuary-font;
     }
+
+    // h2{
+    //   border-bottom: 1px solid black;
+    // }
 
     a,p{
       display: inline-block;
