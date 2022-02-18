@@ -36,36 +36,24 @@
   </header>
   
     <main>
-      <!-- <section class="start-headline">
-        <h1 class="start-h1">CLASSICS</h1>
-        <p class="start-info">Here you can find our selection of classical literature.</p>
-      </section>
-      <section class="start-content">
-        <div class="product-container">
-          <div class="img-frame">
-            <img class="book-img" src="" alt="" />
-          </div>
-          <h2 class="book-title">Foundation</h2>
-          <h3 class="category-price">1500 kr</h3>
-          <button class="buy btn">ADD TO CART</button>
-        </div>
-      </section> -->
-      <div class="login-box">
+      <section class="login-box">
         <h2>Login to your account!</h2>
-        <label for="user-name">Username</label>
-        <input type="text" class="username" id="user-name" placeholder="John Doe">
-        <br>
-        <label for="user-pass">Password</label>
-        <input type="password" class="password" id="user-pass" placeholder="*******">
-        <br>
-        <button class="login-button btn">Log in</button>
+        <form action="" class="login-form" id="user-login-form">
+          <label for="user-name">Username</label>
+          <input type="text" class="username" id="user-name" placeholder="johndoe@email.com" required>
+          <br>
+          <label for="user-pass">Password</label>
+          <input type="password" class="password" id="user-pass" minlength="6" maxlength="14" placeholder="******" required>
+          <br>
+          <button class="login-button btn">Log in</button>
+        </form> 
         <br>
         <div class="login-box-footer">
           <p>Don't have an account?</p>
           <a href="./user.html" target="_blank" rel="noopener noreferrer">Sign up</a>
           
         </div>
-      </div>
+      </section>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">

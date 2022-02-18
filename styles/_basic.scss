@@ -20,6 +20,12 @@
     justify-content: space-between;
     align-items: flex-start;
 
+    .logo {
+      //* Kev ändringar, fixar så att loggan är rimligt stor
+      width: 20%;
+      height: 20%;
+    } //* slut på ändringar
+
     .login-nav {
       //*Kev ändringar
       width: 30%;
@@ -36,11 +42,7 @@
     } //* slut på ändringar, flyttade a{...} inuti bara för att det ska vara konsekvent
   }
 
-  .logo {
-    //* Kev ändringar, fixar så att loggan är rimligt stor
-    width: 20%;
-    height: 20%;
-  } //* slut på ändringar
+ 
 
   .nav-wrapper {
     text-align: center;
@@ -53,11 +55,16 @@
       a {
         color: $accent-color;
         @include booktuary-font;
-        font-size: medium;
+        font-size: 1.5rem; //* Kev - ändrat till rem ist.för medium
         text-decoration: none;
         font-weight: 350;
         padding: 0px 10px;
         text-transform: capitalize;
+        &:hover{
+          // font-size: 1.5rem;
+          color: aliceblue;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -233,32 +240,7 @@ main {
     }
   }
 
-  // //* Kev styling för login sida, work in progress... behåller denna bortkommenterad än så länge
-  // .login-box{
-  //   margin-top: 30px;
-  //   width: 380px;
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   align-items: center;
-
-  //   .username, .password{
-  //     font-size: 18px;
-  //     height: auto;
-  //     padding: 11px 45px 12px 40px;
-  //     border-radius: 3px;
-  //     border: none;
-
-  //     // @include inputfield-styling;
-  //   }
-  //   .login-button{
-  //     font-size: 16px;
-  //     font-weight: 700;
-  //     height: 48px;
-  //     margin-bottom: 16px;
-  //     width: 82%;
-  //   }
-  // }
+ 
 }
 
 .main-footer {
@@ -302,9 +284,9 @@ main {
     gap: 25px;
   }
 
-  .logo {
-    width: 40%;
-    height: auto;
+  .logo { //denna gör ingenting & originala körs fortfarande oavsett media
+    width: 50%;
+    height: 50%;
   }
   .logo-link-wrapper .login-nav .hidden {
     //* Kev, testar med hidden klassen så att texten försvinner i mobile format
