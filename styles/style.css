@@ -219,7 +219,12 @@ main .start-content .product-container .img-frame.category-frame {
 }
 
 main .start-content .product-container .categ-title-container {
+  padding: 0px 17px;
   text-transform: uppercase;
+}
+
+main .start-content .product-container .categ-title-container .categ-desc {
+  text-transform: capitalize;
 }
 
 main .start-content .product-container .buy-button-container.product-info-page {

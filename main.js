@@ -48,7 +48,8 @@ function readJson() {
         categoryCount.forEach((item) => {
           const newCategory = `<div class="category-container"><a class="select-category" href="index.html?category=${item.categoryName}" ><div class="product">
           <div class="img-frame category-frame"><div class="image-container"><img class="book-img" src="${item.categoryBgImage}"></img></div><div class="categ-title-container">
-          <h2 class="categ-title">${item.categoryName}</h2></div></div>
+          <h2 class="categ-title">${item.categoryName}</h2>
+          <p class="categ-desc">${item.desc}</p></div></div>
         </div></a></div>`;
           productWrapper.insertAdjacentHTML("beforeend", newCategory);
         });
