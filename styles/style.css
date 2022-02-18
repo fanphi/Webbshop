@@ -39,6 +39,11 @@
           align-items: flex-start;
 }
 
+.main-header .logo-link-wrapper .logo {
+  width: 20%;
+  height: 20%;
+}
+
 .main-header .logo-link-wrapper .login-nav {
   width: 30%;
   display: -webkit-box;
@@ -57,11 +62,6 @@
   font-weight: 350;
 }
 
-.main-header .logo {
-  width: 20%;
-  height: 20%;
-}
-
 .main-header .nav-wrapper {
   text-align: center;
   width: 100%;
@@ -78,11 +78,16 @@
 .main-header .nav-wrapper .header-nav a {
   color: #e5c7ab;
   font-family: "Josefin Sans", sans-serif;
-  font-size: medium;
+  font-size: 1.5rem;
   text-decoration: none;
   font-weight: 350;
   padding: 0px 10px;
   text-transform: capitalize;
+}
+
+.main-header .nav-wrapper .header-nav a:hover {
+  color: aliceblue;
+  text-decoration: underline;
 }
 
 .btn {
@@ -404,8 +409,8 @@ main .start-content .product-container div a {
     gap: 25px;
   }
   .logo {
-    width: 40%;
-    height: auto;
+    width: 50%;
+    height: 50%;
   }
   .logo-link-wrapper .login-nav .hidden {
     display: none;
@@ -468,7 +473,7 @@ main .start-content .product-container div a {
   margin-top: 3%;
 }
 
-main .login-box {
+main .login-box, main .login-form {
   margin-top: 30px;
   width: 380px;
   display: -webkit-box;
@@ -486,16 +491,16 @@ main .login-box {
           align-items: center;
 }
 
-main .login-box label, main .login-box h2 {
+main .login-box label, main .login-box h2, main .login-form label, main .login-form h2 {
   margin-bottom: 10px;
   font-family: "Josefin Sans", sans-serif;
 }
 
-main .login-box a, main .login-box p {
+main .login-box a, main .login-box p, main .login-form a, main .login-form p {
   display: inline-block;
 }
 
-main .login-box .username, main .login-box .password {
+main .login-box .username, main .login-box .password, main .login-form .username, main .login-form .password {
   font-size: 18px;
   height: auto;
   padding: 11px 45px 12px 40px;
@@ -503,7 +508,7 @@ main .login-box .username, main .login-box .password {
   border: none;
 }
 
-main .login-box .login-button {
+main .login-box .login-button, main .login-form .login-button {
   font-size: 16px;
   font-weight: 700;
   height: 48px;
@@ -529,7 +534,7 @@ main .login-box .login-button {
   padding-top: 5%;
 }
 
-.checkout-wrapper .checkout-h1 {
+.checkout-wrapper .checkout-h2 {
   font-family: "Josefin Sans", sans-serif;
   margin: 3% 0 5% 0;
 }
@@ -577,5 +582,114 @@ main .login-box .login-button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.cart-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-section .cart-h2 {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 10% 0 10% 0;
+}
+
+.cart-section .cart-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: blanchedalmond;
+  height: 60%;
+  width: 150%;
+}
+
+.cart-section .cart-wrapper .cart-products-wrapper {
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart-section .cart-wrapper .cart-products-wrapper .cart-img {
+  width: 35%;
+  position: relative;
+  right: 20%;
+}
+
+.cart-section .cart-wrapper .cart-products-wrapper .cart-price {
+  position: relative;
+  left: 20%;
+}
+
+.cart-section .cart-wrapper .cart-products-wrapper .cart-inner-wrapper {
+  width: 40%;
+}
+
+.cart-section .cart-wrapper .cart-products-wrapper .cart-inner-wrapper .item-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.cart-section .cart-wrapper .cart-products-wrapper .cart-inner-wrapper .item-div .cart-btn {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: normal;
+  font-size: medium;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #131313;
+  border-radius: 5px;
+  background-color: #e5c7ab;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  padding: 0 10%;
+  height: 0%;
+  margin: 5%;
+}
+
+.cart-section .cart-wrapper .cart-products-wrapper .cart-inner-wrapper .item-div .cart-btn:hover {
+  background: #b99e83;
+  color: blanchedalmond;
+}
+
+.cart-section .cart-wrapper .total-p {
+  margin: 5%;
+  position: relative;
+  left: 15%;
+}
+
+.cart-section .cart-checkout-btn {
+  margin-top: 5%;
 }
 /*# sourceMappingURL=style.css.map */

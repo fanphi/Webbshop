@@ -26,42 +26,43 @@
         </nav>
       </div>
       <div class="nav-wrapper">
-      <nav class="header-nav">
-        <a href="./index.html">Start </a>
-        <a href="./index.html?category=classics">Classics</a>
-        <a href="./index.html?category=science">Science</a>
-        <a href="./index.html?category=poetry">Poetry</a>
-      </nav>
-    </div>
-  </header>
-  
-    <main>
-      <section class="login-box">
-        <h2>Login to your account!</h2>
-        <form action="" class="login-form" id="user-login-form">
-          <label for="user-name">Username</label>
-          <input type="text" class="username" id="user-name" placeholder="johndoe@email.com" required>
-          <br>
-          <label for="user-pass">Password</label>
-          <input type="password" class="password" id="user-pass" minlength="6" maxlength="14" placeholder="******" required>
-          <br>
-          <button class="login-button btn">Log in</button>
-        </form> 
-        <br>
-        <div class="login-box-footer">
-          <p>Don't have an account?</p>
-          <a href="./user.html" target="_blank" rel="noopener noreferrer">Sign up</a>
-          
+        <nav class="header-nav">
+          <a href="index.html">Start </a>
+          <a class="categ-link" href="index.html?category=poetry">Poetry</a>
+          <a class="categ-link" href="index.html?category=science">Science</a>
+          <a class="categ-link" href="index.html?category=classics">Classics</a>
+        </nav>
+      </div>
+    </header>
+  <main>
+      <section class="cart-section">
+          <h2 class="cart-h2">Your shopping cart</h2>
+          <div class="cart-wrapper">
+          <div class="cart-products-wrapper">
+           <img src="" alt="picture of book" class="cart-img">
+           <div class="cart-inner-wrapper">
+           <h4 class="cart-title">Title</h4>
+           <p class="cart-author">Author</p>
+          <div class="item-div">
+           <p class="cart-items">Items:<span class="number-item">x</span></p>
+           <button class="cart-add cart-btn">+</button>
+           <button class="cart-remove cart-btn">-</button>
+          </div>
         </div>
+        <p class="cart-price">Price</p>
+          </div>
+          <p class="total-p">Total amount(<span class="total-items">x</span> items): <span class="total-price">x</span>SEK</p>
+        </div>
+          <button class="cart-checkout-btn btn">CHECKOUT</button>
+
       </section>
-    </main>
+  </main>
     <footer class="main-footer">
       <div class="footer-column-left">
-        <h2 class="footer-left-title">Bookstore</h2>
+        <h2 class="footer-left-title">Booktuary</h2>
         <p class="footer-left-adress">Tulegatan-121</p>
         <p class="footer-left-adress">11386-Stockholm</p>
-        <p class="e-mail">bookstore@gmail.com</p>
-        
+        <p class="e-mail">booktuary@gmail.com</p>
       </div>
       <div class="footer-column-middle">
         <div class="payment-option-container">
@@ -77,13 +78,16 @@
           <i class="fa-brands fa-facebook"></i>
         </div>
         <div class="footer-cookies-text-container">
-          <p class="footer-cookies-text"><br>
+          <p class="footer-cookies-text">
+            <br />
             We use cookies to give best service
-          <p>
-          <p class="footer-copyright-text">&copy;2022 Bookstore</p>
+          </p>
+
+          <p></p>
+          <p class="footer-copyright-text">&copy;2022 Booktuary</p>
         </div>
       </div>
-    </footer> 
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>
