@@ -16,53 +16,53 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-          <i class="fa-solid fa-user"></i>
           <a href="./login.html"><i class="fa-solid fa-user"></i></a>
           <a class="hidden" href="./login.html">Sign up/ Log in</a>
           <!-- adderar hidden class till länkarna-->
           <br />
-          <i class="fa-solid fa-cart-shopping"></i>
+          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
           <a class="hidden" href="">Shopping cart</a>
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
       <div class="nav-wrapper">
         <nav class="header-nav">
-          <a href="?category=poetry">Start </a>
-          <a href="?category=classics">Classics</a>
-          <a href="?category=science">Science</a>
-          <a href="?category=poetry">Poetry</a>
+          <a href="index.html">Start </a>
+          <a class="categ-link" href="index.html?category=poetry">Poetry</a>
+          <a class="categ-link" href="index.html?category=science">Science</a>
+          <a class="categ-link" href="index.html?category=classics">Classics</a>
         </nav>
       </div>
     </header>
-    <main class="checkout-main">
-      <section class="checkout-wrapper">
-     <h2 class="checkout-h2">CHECKOUT</h1>
-     <form action="" class="checkout-form">
-       <label for="name-checkout-input">Full name*</label>
-       <input type="name" id="name-checkout-input" required class="checkout-input">
-       <label for="address-checkout-input">Address*</label>
-       <input type="address" id="address-checkout-input" required class="checkout-input">
-       <label for="postal-checkout-input">Postal code*</label>
-       <input type="text" pattern="[0-9]*" id="postal-checkout-input" required class="checkout-input">
-       <label for="city-checkout-input">City*</label>
-       <input type="text" id="city-checkout-input" class="checkout-input">
-       <label for="email-checkout-input">Email*</label>
-       <input type="email" id="email-checkout-input" class="checkout-input">
-       <p>*required. These fields must be filled out to procceed. </p>
-       <button class="checkout-form-btn btn">CONFIRM</button> 
-       <div class="checkout-p-div"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
-       </div> 
-     </form>
-    </section>
-    </main>
+  <main>
+      <section class="cart-section">
+          <h2 class="cart-h2">Your shopping cart</h2>
+          <div class="cart-wrapper">
+          <div class="cart-products-wrapper">
+           <img src="" alt="picture of book" class="cart-img">
+           <div class="cart-inner-wrapper">
+           <h4 class="cart-title">Title</h4>
+           <p class="cart-author">Author</p>
+          <div class="item-div">
+           <p class="cart-items">Items:<span class="number-item">x</span></p>
+           <button class="cart-add cart-btn">+</button>
+           <button class="cart-remove cart-btn">-</button>
+          </div>
+        </div>
+        <p class="cart-price">Price</p>
+          </div>
+          <p class="total-p">Total amount(<span class="total-items">x</span> items): <span class="total-price">x</span>SEK</p>
+        </div>
+          <button class="cart-checkout-btn btn">CHECKOUT</button>
+
+      </section>
+  </main>
     <footer class="main-footer">
       <div class="footer-column-left">
         <h2 class="footer-left-title">Booktuary</h2>
         <p class="footer-left-adress">Tulegatan-121</p>
         <p class="footer-left-adress">11386-Stockholm</p>
         <p class="e-mail">booktuary@gmail.com</p>
-        
       </div>
       <div class="footer-column-middle">
         <div class="payment-option-container">
@@ -78,9 +78,12 @@
           <i class="fa-brands fa-facebook"></i>
         </div>
         <div class="footer-cookies-text-container">
-          <p class="footer-cookies-text"><br>
+          <p class="footer-cookies-text">
+            <br />
             We use cookies to give best service
-          <p>
+          </p>
+
+          <p></p>
           <p class="footer-copyright-text">&copy;2022 Booktuary</p>
         </div>
       </div>
