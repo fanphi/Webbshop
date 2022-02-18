@@ -16,11 +16,11 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-          <a href="./login.html"><i class="fa-solid fa-user"></i></a>
-          <a class="hidden" href="./login.html">Sign up/ Log in</a>
+          <i class="fa-solid fa-user"></i>
+          <a class="hidden" href="">Sign up/ Log in</a>
           <!-- adderar hidden class till länkarna-->
           <br />
-          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+          <i class="fa-solid fa-cart-shopping"></i>
           <a class="hidden" href="">Shopping cart</a>
           <!-- adderar hidden class till länkarna-->
         </nav>
@@ -35,22 +35,27 @@
       </div>
     </header>
     <main>
-      <section class="start-headline">
-        <h1 class="start-h1">BOOKTUARY</h1>
-        <p class="start-info">Welcome to our brand new bookstore!</p>
-      </section>
-      <section class="start-content">
-        <div id="productContainer" class="product-container">
-          <div class="product">
-            <div class="img-frame">
-              <img class="book-img" src="" alt="" />
-            </div>
-            <h2 class="book-title">Foundation</h2>
-            <h3 class="category-price">1500 kr</h3>
-            <button class="buy btn">ADD TO CART</button>
-          </div>
-        </div>
-      </section>
+        <section class="form-wrapper">
+        <h2>Create new account</h2>
+        <form id="createUser" class="userform">
+            <label for="name">Full name* </label>
+            <input type="name" id="name" required class="input-field">
+            <label for="address">Address*</label>
+            <input type="address" id="address" required class="input-field">
+            <label for="zipcode">Postal code*</label>
+            <input type="text" id="zipcode" pattern="[0-9]*" required class="input-field">
+            <label for="city">City*</label>
+            <input type="text" id="city" required class="input-field">
+            <label for="userEmail">Email*</label>
+            <input type="email" id="useremail" required class="input-field">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" class="input-field">
+            <label for="userPassword">Password*</label>
+            <input type="password" id="userpass" required class="input-field">
+            <p>*required. These fields must be filled out to proceed. </p>
+            <button class="create btn" id="createbtn">Create account</button>
+        </form>
+    </section>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">
@@ -81,6 +86,7 @@
         </div>
       </div>
     </footer>
-    <script src="main.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="user.js"></script>
   </body>
 </html>

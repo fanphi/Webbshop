@@ -20,7 +20,8 @@
     justify-content: space-between;
     align-items: flex-start;
 
-    .login-nav{ //*Kev ändringar
+    .login-nav {
+      //*Kev ändringar
       width: 30%;
       display: flex;
       justify-content: space-around;
@@ -32,24 +33,21 @@
         text-decoration: none;
         font-weight: 350;
       }
-
     } //* slut på ändringar, flyttade a{...} inuti bara för att det ska vara konsekvent
-
-    
   }
 
-
-  .logo { //* Kev ändringar, fixar så att loggan är rimligt stor
-    width: 30%;
-    height: 30%;
+  .logo {
+    //* Kev ändringar, fixar så att loggan är rimligt stor
+    width: 20%;
+    height: 20%;
   } //* slut på ändringar
-
 
   .nav-wrapper {
     text-align: center;
     width: 100%;
-    .header-nav { //*Kev ändringar
-      display:flex;
+    .header-nav {
+      //*Kev ändringar
+      display: flex;
       justify-content: space-around;
       //* slut på kevs ändringar, gör att det finns mellanrum
       a {
@@ -90,9 +88,9 @@ main {
   align-items: center;
   justify-content: flex-start;
   background-color: $logo-color;
-  height: 500px;
- 
+  min-height: 500px;
 
+  // Fanny styling för innehåll startsida. Både mobil och desktop
   .start-headline {
     margin-top: 30px;
     width: 100%;
@@ -103,47 +101,62 @@ main {
     h1 {
       @include booktuary-font;
       font-size: 30px;
-      font-weight:normal;
+      font-weight: normal;
+      @media screen and(min-width:500px) {
+        font-size: 40px;
+      }
     }
-    .start-info{
+    .start-info {
       font-size: 20px;
+      text-align: center;
+      @media screen and (min-width: 500px) {
+        margin-top: 15px;
+        font-size: 25px;
+      }
     }
   }
 
   .start-content {
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 
     .product-container {
       // height: 225px;
       // width: 180px;
-      display: flex;
+      //display: flex;
       // justify-content: center;
-      align-items: center;
-      flex-direction: column;
 
-      .img-frame{
-      background: blanchedalmond;
-      height: 230px;
-      width: 180px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      //align-items: center;
+      //flex-direction: column;
+      //gap: 25px;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 25px;
+      width: 90%;
+      justify-items: center;
+
+      .img-frame {
+        background: blanchedalmond;
+        height: 230px;
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .book-img{
+      .book-img {
         width: 145px;
         height: 210px;
       }
 
-      .book-title{
+      .book-title {
         margin-top: 10px;
         font-size: 20px;
-
       }
 
       .category-price {
@@ -153,12 +166,37 @@ main {
       }
     }
   }
+
+  // //* Kev styling för login sida, work in progress... behåller denna bortkommenterad än så länge
+  // .login-box{
+  //   margin-top: 30px;
+  //   width: 380px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   align-items: center;
+
+  //   .username, .password{
+  //     font-size: 18px;
+  //     height: auto;
+  //     padding: 11px 45px 12px 40px;
+  //     border-radius: 3px;
+  //     border: none;
+
+  //     // @include inputfield-styling;
+  //   }
+  //   .login-button{
+  //     font-size: 16px;
+  //     font-weight: 700;
+  //     height: 48px;
+  //     margin-bottom: 16px;
+  //     width: 82%;
+  //   }
+  // }
 }
 
 .main-footer {
   background: #7e4b34;
-  height: 30%;
-
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -175,13 +213,13 @@ main {
     gap: 10px;
   }
 
-  h2,p, .footer-copyright-text{
+  h2,
+  p,
+  .footer-copyright-text {
     color: $accent-color;
     @include booktuary-font;
     font-weight: 300;
   }
-
-  
 }
 
 .fa-brands {
@@ -189,25 +227,21 @@ main {
 }
 
 .fa-solid {
-
   color: blanchedalmond;
 }
 
-
-
-
-@media screen and (max-width: 500px) {
+ @media screen and (max-width: 500px) {
   .main-footer {
     flex-direction: column-reverse;
     gap: 25px;
   }
 
-  .logo{
-    width: 40%;
+  .logo {
+    width: 40%; 
     height: auto;
   }
-  .logo-link-wrapper .login-nav .hidden{  //* Kev, testar med hidden klassen så att texten försvinner i mobile format
+  .logo-link-wrapper .login-nav .hidden {
+    //* Kev, testar med hidden klassen så att texten försvinner i mobile format
     display: none;
   }
 }
-

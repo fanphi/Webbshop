@@ -1,18 +1,25 @@
 $header-color: #131313;
-$accent-color: #E5C7AB;
-$footer-color:#9B5151;
-$accent-yellow: #F4CD84;
-$logo-color: #E7BD70;
+$accent-color: #e5c7ab;
+$footer-color: #9b5151;
+$accent-yellow: #f4cd84;
+$logo-color: #e7bd70;
 $lighter-color: hsl(0, 5%, 24%);
 
 //Mixins
 
 @mixin main-font {
-    font-family: 'Shippori Mincho B1', serif;
+  font-family: "Shippori Mincho B1", serif;
 }
 //@include main-font;
 
 @mixin booktuary-font {
-    font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 //@include booktuary-font;
+
+@mixin inputfield-styling {
+  border-radius: 3px;
+  border: none;
+  height: 1.3rem;
+}
+//@include inputfield-styling;

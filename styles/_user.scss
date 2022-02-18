@@ -1,0 +1,44 @@
+
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5%;
+       
+       h2{
+        @include booktuary-font;
+        margin: 5% 0%;
+       } 
+
+        .userform {
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            font-size: small;
+
+            .input-field {
+                border-radius: 3px;
+                border: none;
+                height: 1.3rem;
+            }
+            label {
+                margin-top: 5%;
+            }
+
+            .labelTerms{
+                font-size: xx-small;
+            }
+
+            .create.btn{
+                margin: 8% 0%;
+            }
+
+            p {
+                margin-top: 3%;
+            }
+        }
+    }
+    
+
+
