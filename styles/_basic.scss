@@ -20,6 +20,12 @@
     justify-content: space-between;
     align-items: flex-start;
 
+    .logo {
+      //* Kev ändringar, fixar så att loggan är rimligt stor
+      width: 20%;
+      height: 20%;
+    } //* slut på ändringar
+
     .login-nav {
       //*Kev ändringar
       width: 30%;
@@ -36,11 +42,7 @@
     } //* slut på ändringar, flyttade a{...} inuti bara för att det ska vara konsekvent
   }
 
-  .logo {
-    //* Kev ändringar, fixar så att loggan är rimligt stor
-    width: 20%;
-    height: 20%;
-  } //* slut på ändringar
+ 
 
   .nav-wrapper {
     text-align: center;
@@ -53,11 +55,16 @@
       a {
         color: $accent-color;
         @include booktuary-font;
-        font-size: medium;
+        font-size: 1.5rem; //* Kev - ändrat till rem ist.för medium
         text-decoration: none;
         font-weight: 350;
         padding: 0px 10px;
         text-transform: capitalize;
+        &:hover{
+          // font-size: 1.5rem;
+          color: aliceblue;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -157,7 +164,11 @@ main {
         padding: 15px 0px;
       }
       .categ-title-container {
+        padding: 0px 17px;
         text-transform: uppercase;
+        .categ-desc {
+          text-transform: capitalize;
+        }
       }
       .buy-button-container {
         &.product-info-page {
@@ -298,9 +309,9 @@ main {
     gap: 25px;
   }
 
-  .logo {
-    width: 40%;
-    height: auto;
+  .logo { //denna gör ingenting & originala körs fortfarande oavsett media
+    width: 50%;
+    height: 50%;
   }
   .logo-link-wrapper .login-nav .hidden {
     //* Kev, testar med hidden klassen så att texten försvinner i mobile format
