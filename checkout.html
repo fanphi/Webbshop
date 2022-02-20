@@ -16,22 +16,21 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-          <i class="fa-solid fa-user"></i>
           <a href="./login.html"><i class="fa-solid fa-user"></i></a>
           <a class="hidden" href="./login.html">Sign up/ Log in</a>
           <!-- adderar hidden class till länkarna-->
           <br />
-          <i class="fa-solid fa-cart-shopping"></i>
-          <a class="hidden" href="">Shopping cart</a>
+          <a href="./shoppingcart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a class="hidden" href="./shoppingcart.html">Shopping cart</a>
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
       <div class="nav-wrapper">
         <nav class="header-nav">
-          <a href="?category=poetry">Start </a>
-          <a href="?category=classics">Classics</a>
-          <a href="?category=science">Science</a>
-          <a href="?category=poetry">Poetry</a>
+          <a href="index.html">Start </a>
+          <a class="categ-link" href="index.html?category=poetry">Poetry</a>
+          <a class="categ-link" href="index.html?category=science">Science</a>
+          <a class="categ-link" href="index.html?category=classics">Classics</a>
         </nav>
       </div>
     </header>
@@ -49,6 +48,10 @@
        <input type="text" id="city-checkout-input" class="checkout-input">
        <label for="email-checkout-input">Email*</label>
        <input type="email" id="email-checkout-input" class="checkout-input">
+       <label for="phone-checkout-input">Phone number</label>
+       <input type="tel" id="phone-checkout-input" class="checkout-input">
+       <label for="comments-checkout-input">Comments</label>
+       <input type="text" id="comments-checkout-input" class="checkout-input">
        <p>*required. These fields must be filled out to procceed. </p>
        <button class="checkout-form-btn btn">CONFIRM</button> 
        <div class="checkout-p-div"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
