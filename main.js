@@ -14,9 +14,9 @@ function addToCart(bookId) {
   localStorage.setItem("cartItems", JSON.stringify(items));
   console.log(items);
 }
-//Fanny & Fredrika spekulerar:
-//hämta info från cartItems i local storage
-//för varje item i cartItems, skapa en till cart-wrapper med innehåll
+//Fanny & Fredrikas funktion för att skriva ut html i varukorgen
+//Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items
+//Koppla plus&minusknapparna till det
 function generateCartItems(json){
   const cartItemWrapper = document.getElementById("cart-wrapper");
   if(cartItemWrapper){
@@ -33,9 +33,9 @@ function generateCartItems(json){
             console.log(book);
             const newCartItem = ` <div class="cart-wrapper">
             <div class="cart-products-wrapper">
-             <img src="${book.src}" alt="picture of book" class="cart-img" id="cart-img">
+             <img src="${book.bookImage}" alt="picture of book" class="cart-img" id="cart-img">
              <div class="cart-inner-wrapper">
-             <h4 class="cart-title" id="cart-title">${book.name}</h4>
+             <h4 class="cart-title" id="cart-title">${book.title}</h4>
              <p class="cart-author" id="cart-author">${book.author}</p>
             <div class="item-div">
              <p class="cart-items">Items:<span class="number-item" id="number-item">x</span></p>
@@ -43,59 +43,17 @@ function generateCartItems(json){
              <button class="cart-remove cart-btn" id="cart-remove-btn">-</button>
             </div>
           </div>
-          <p class="cart-price" id="cart-price">${book.price}</p>
+          <p class="cart-price" id="cart-price">${book.price}SEK</p>
             </div>
             <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
           </div>`;
            cartItemWrapper.insertAdjacentHTML("beforeend", newCartItem);
           }
         })
-       
       })
-
     })
   }
-  
-  
-
-
-
-
-  //en variabel för den genererade cart itemet
-  var generateCartBook = cartItems.book.forEach((item) => {
-    if (item.book == bookId) {
-      console.log(item.books);
-      const cartBook = item.books.map((product) => ({
-        name: product.title,
-        author: product.author,
-        price: product.price,
-        src: product.bookImage,
-        id: product.id,
-      }));
-      cartBook.forEach((item) => {
-        const newCartItem = ` <div class="cart-wrapper">
-        <div class="cart-products-wrapper">
-         <img src="${item.src}" alt="picture of book" class="cart-img" id="cart-img">
-         <div class="cart-inner-wrapper">
-         <h4 class="cart-title" id="cart-title">${item.name}</h4>
-         <p class="cart-author" id="cart-author">${item.author}</p>
-        <div class="item-div">
-         <p class="cart-items">Items:<span class="number-item" id="number-item">x</span></p>
-         <button class="cart-add cart-btn" id="cart-add-btn">+</button>
-         <button class="cart-remove cart-btn" id="cart-remove-btn">-</button>
-        </div>
-      </div>
-      <p class="cart-price" id="cart-price">${item.price}</p>
-        </div>
-        <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
-      </div>`;
-       cartWrapper.insertAdjacentHTML("beforeend", newCartItem);
-      });
-    }
-  });
 }
-
-
 
 
 
