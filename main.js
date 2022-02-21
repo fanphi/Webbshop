@@ -15,7 +15,7 @@ function addToCart(bookId) {
   console.log(items);
 }
 //Fanny & Fredrikas funktion för att skriva ut html i varukorgen
-//Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items
+//Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items längst ner om det är fler än en bok i varukorgen
 //Koppla plus&minusknapparna till det
 function generateCartItems(json){
   const cartItemWrapper = document.getElementById("cart-wrapper");
