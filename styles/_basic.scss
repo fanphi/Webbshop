@@ -123,6 +123,14 @@ main {
       }
     }
   }
+  .filter-section {
+    display: none;
+    width: 90%;
+    justify-content: flex-end;
+    &.visible {
+      display: flex;
+    }
+  }
 
   .start-content {
     width: 100%;
@@ -214,6 +222,12 @@ main {
           @media screen and (max-width: 410px) {
             padding-bottom: 5px;
           }
+        }
+        &.visible-categ {
+          visibility: visible;
+        }
+        &.hidden-categ {
+          display: none;
         }
       }
       .text-container-product-page {

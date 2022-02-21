@@ -170,6 +170,20 @@ main .start-headline .start-info {
   }
 }
 
+main .filter-section {
+  display: none;
+  width: 90%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+main .filter-section.visible {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 main .start-content {
   width: 100%;
   margin-top: 20px;
@@ -297,6 +311,14 @@ main .start-content .product-container .product .title-container {
   main .start-content .product-container .product .title-container {
     padding-bottom: 5px;
   }
+}
+
+main .start-content .product-container .product.visible-categ {
+  visibility: visible;
+}
+
+main .start-content .product-container .product.hidden-categ {
+  display: none;
 }
 
 main .start-content .product-container .text-container-product-page {

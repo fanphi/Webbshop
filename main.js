@@ -111,20 +111,22 @@ function readJson() {
 readJson();
 
 // login form validation "amin"
-const logInForm=document.querySelector(".login-box")
 
-const userName=document.querySelector("#user-name")
-const userPass=document.querySelector("#user-pass")
-const logInButton= document.querySelector("#loginbtn")
 
-const dispalyResult=document.querySelector(".log-in-display")
+const formButn= document.getElementById("formButn")
 
-logInForm.addEventListener("submit",function(e){
-  e.preventDefault();
-  if (userName.value === ""){
-    dispalyResult.innerHTML="You have to put inpute"
-  }
- 
+
+
+
+formButn.addEventListener("click",function motimia(e){
+const userName=document.getElementById("user-name").value;
+const userPass=document.getElementById("user-pass").value;
+if((userName !=="")&&(userPass !== "")){
+  return true
+  
+  
+}
 
 })
+
 

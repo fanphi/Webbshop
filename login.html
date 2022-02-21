@@ -38,24 +38,26 @@
     <main>
       <section class="login-box">
         <h2>Login to your account!</h2>
-        <form action="" class="login-form" id="user-login-form">
+
+
+       <!-- amin added action and onsubmit -->
+        <form action="http://127.0.0.1:5500/index.html" onsubmit="return motimia();" class="login-form" id="user-login-form">
           <label for="user-name">Username</label>
           <input type="text" class="username" id="user-name" placeholder="johndoe@email.com" required>
           <br>
           <label for="user-pass">Password</label>
           <input type="password" class="password" id="user-pass" minlength="6" maxlength="14" placeholder="******" required>
           <br>
-          <button class="login-button btn">Log in</button>
+          <button class="login-button btn" id="formButn">Log in</button>
         </form> 
         <br>
         <div class="login-box-footer">
+
+
           <p>Don't have an account?</p>
           <a href="./user.html" target="_blank" rel="noopener noreferrer">Sign up</a>
-
-          <!-- amin -->
-          <!-- <br>
-          <h3 class="log-in-display"></h3> -->
-          <!-- amin -->
+          
+          
           
         </div>
       </section>
