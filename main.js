@@ -14,6 +14,46 @@ function addToCart(bookId) {
   localStorage.setItem("cartItems", JSON.stringify(items));
   console.log(items);
 }
+//Fanny & Fredrika spekulerar:
+//för varje item i cartItems, skapa en till cart-wrapper med innehåll
+function generateCartItem(){
+  var generateCartItem = data.categories.forEach((item) => {
+    if (item.categoryName == categoryId) {
+      console.log(item.books);
+      const names = item.books.map((product) => ({
+        name: product.title,
+        author: product.author,
+        price: product.price,
+        src: product.bookImage,
+        id: product.id,
+      }));
+      names.forEach((item) => {
+        const newCartItem = ` <div class="cart-wrapper">
+        <div class="cart-products-wrapper">
+         <img src="${item.src}" alt="picture of book" class="cart-img" id="cart-img">
+         <div class="cart-inner-wrapper">
+         <h4 class="cart-title" id="cart-title">${item.name}</h4>
+         <p class="cart-author" id="cart-author">${item.author}</p>
+        <div class="item-div">
+         <p class="cart-items">Items:<span class="number-item" id="number-item">x</span></p>
+         <button class="cart-add cart-btn" id="cart-add-btn">+</button>
+         <button class="cart-remove cart-btn" id="cart-remove-btn">-</button>
+        </div>
+      </div>
+      <p class="cart-price" id="cart-price">${item.price}</p>
+        </div>
+        <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
+      </div>`;
+        productWrapper.insertAdjacentHTML("beforeend", newCartItem);
+      });
+    }
+  });
+}
+
+
+
+
+
 
 function readJson() {
   fetch("./data/products.json")
