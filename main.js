@@ -1,7 +1,7 @@
 function addToCart(bookId) {
-  var items = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const items = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-  var item = items.find((item) => item.book === bookId);
+  const item = items.find((item) => item.book === bookId);
 
   if (item) {
     item.count += 1;
@@ -15,19 +15,64 @@ function addToCart(bookId) {
   console.log(items);
 }
 //Fanny & Fredrika spekulerar:
+//hämta info från cartItems i local storage
 //för varje item i cartItems, skapa en till cart-wrapper med innehåll
-function generateCartItem(){
-  var generateCartItem = data.categories.forEach((item) => {
-    if (item.categoryName == categoryId) {
+function generateCartItems(json){
+  const cartItemWrapper = document.getElementById("cart-wrapper");
+  if(cartItemWrapper){
+    cartItemWrapper.innerHTML = "";  
+    //hämta info från local storage
+    const items = JSON.parse(localStorage.getItem("cartItems"));
+    items.forEach((item) => {
+    //loopa igenom och hämta id
+      console.log(item);
+    //matcha id med id från data och skriv ut titel, författare, omslag, pris
+      json.categories.forEach((category) =>{
+        category.books.forEach((book)=>{
+          if (item.book == book.id){
+            console.log(book);
+            const newCartItem = ` <div class="cart-wrapper">
+            <div class="cart-products-wrapper">
+             <img src="${book.src}" alt="picture of book" class="cart-img" id="cart-img">
+             <div class="cart-inner-wrapper">
+             <h4 class="cart-title" id="cart-title">${book.name}</h4>
+             <p class="cart-author" id="cart-author">${book.author}</p>
+            <div class="item-div">
+             <p class="cart-items">Items:<span class="number-item" id="number-item">x</span></p>
+             <button class="cart-add cart-btn" id="cart-add-btn">+</button>
+             <button class="cart-remove cart-btn" id="cart-remove-btn">-</button>
+            </div>
+          </div>
+          <p class="cart-price" id="cart-price">${book.price}</p>
+            </div>
+            <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
+          </div>`;
+           cartItemWrapper.insertAdjacentHTML("beforeend", newCartItem);
+          }
+        })
+       
+      })
+
+    })
+  }
+  
+  
+
+
+
+
+  //en variabel för den genererade cart itemet
+  var generateCartBook = cartItems.book.forEach((item) => {
+    if (item.book == bookId) {
       console.log(item.books);
-      const names = item.books.map((product) => ({
+      const cartBook = item.books.map((product) => ({
         name: product.title,
         author: product.author,
         price: product.price,
         src: product.bookImage,
         id: product.id,
       }));
-      names.forEach((item) => {
+      cartBook.forEach((item) => {
         const newCartItem = ` <div class="cart-wrapper">
         <div class="cart-products-wrapper">
          <img src="${item.src}" alt="picture of book" class="cart-img" id="cart-img">
@@ -44,7 +89,7 @@ function generateCartItem(){
         </div>
         <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
       </div>`;
-        productWrapper.insertAdjacentHTML("beforeend", newCartItem);
+       cartWrapper.insertAdjacentHTML("beforeend", newCartItem);
       });
     }
   });
@@ -71,10 +116,10 @@ function readJson() {
       let bookId = params.get("bookid");
 
       console.log(bookId);
-
+      generateCartItems(json);
       const productWrapper = document.getElementById("productContainer");
       productWrapper.innerHTML = "";
-
+      
       if (bookId) {
         generateProductPage(json);
       } else if (!categoryId) {
@@ -83,7 +128,8 @@ function readJson() {
         generateProducts(json);
         document.querySelector(".filter-section").classList.add("visible");
       }
-
+      
+      
       const buyButton = document.querySelectorAll(".buy");
       const searchFilter = document.getElementById("searchInput");
 
@@ -186,8 +232,9 @@ function readJson() {
         });
       }
     })
-    .catch(function () {
+    .catch(function (e) {
       console.log("error");
+      console.log(e);
     });
 }
 readJson();
