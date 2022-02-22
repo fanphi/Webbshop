@@ -114,19 +114,53 @@ readJson();
 
 
 const formButn= document.getElementById("formButn")
+const signOut = document.querySelector(".hidden")
+
+
+
+const getfromLocal=JSON.parse(localStorage.getItem("user")) 
+const email= getfromLocal[0].email
+const password= getfromLocal[0].password
 
 
 
 
-formButn.addEventListener("click",function motimia(e){
+formButn.addEventListener("click",function(e){
+
 const userName=document.getElementById("user-name").value;
 const userPass=document.getElementById("user-pass").value;
-if((userName !=="")&&(userPass !== "")){
-  return true
-  
+if((userName == email)&&(userPass == password)){
+  window.location.href = "http://127.0.0.1:5500/index.html";
+  alert("Success! You are now logged in")
+  signOut.innerHTML="Sign out"
+  localStorage.setItem("email",email)
+  localStorage.setItem("password",password)
   
 }
 
+
+else{
+  alert("Oops, something went wrong! Please review your information and try again.")
+  e.defaultPrevented();
+}
 })
+
+
+signOut.addEventListener("click",function(){
+  localStorage.removeItem("email")
+  localStorage.removeItem("password")
+  window.location.href ="http://127.0.0.1:5500/login.html"
+})
+
+
+
+
+
+
+
+
+
+
+
 
 
