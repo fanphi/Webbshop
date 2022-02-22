@@ -216,7 +216,7 @@ formButn.addEventListener("click",function(e){
 const userName=document.getElementById("user-name").value;
 const userPass=document.getElementById("user-pass").value;
 if((userName == email)&&(userPass == password)){
-  window.location.href = "http://127.0.0.1:5500/index.html";
+  window.location.href = "./logout.html";
   alert("Success! You are now logged in")
   signOut.innerHTML="Sign out"
   localStorage.setItem("email",email)
@@ -236,18 +236,5 @@ else{
 signOut.addEventListener("click",function(){
   localStorage.removeItem("email")
   localStorage.removeItem("password")
-  window.location.href ="http://127.0.0.1:5500/login.html"
+  window.location.href ="./login.html"
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
