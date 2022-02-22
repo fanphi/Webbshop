@@ -46,12 +46,15 @@ function addToCart(bookId) {
             <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
           </div>`;
            cartItemWrapper.insertAdjacentHTML("beforeend", newCartItem);
+           
           }
         })
       })
     })
   }
 }
+
+
 function readJson() {
   fetch("./data/products.json")
     .then((response) => {
