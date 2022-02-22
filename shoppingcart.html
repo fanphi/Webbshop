@@ -20,8 +20,8 @@
           <a class="hidden" href="./login.html">Sign up/ Log in</a>
           <!-- adderar hidden class till länkarna-->
           <br />
-          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-          <a class="hidden" href="">Shopping cart</a>
+          <a href="./shoppingcart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          <a class="hidden" href="./shoppingcart.html">Shopping cart</a>
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
@@ -37,23 +37,24 @@
   <main>
       <section class="cart-section">
           <h2 class="cart-h2">Your shopping cart</h2>
-          <div class="cart-wrapper">
+          <div class="cart-wrapper" id="cart-wrapper"></div>
+          <!-- <div class="cart-wrapper" id="cart-wrapper">
           <div class="cart-products-wrapper">
-           <img src="" alt="picture of book" class="cart-img">
+           <img src="" alt="picture of book" class="cart-img" id="cart-img">
            <div class="cart-inner-wrapper">
-           <h4 class="cart-title">Title</h4>
-           <p class="cart-author">Author</p>
+           <h4 class="cart-title" id="cart-title">Title</h4>
+           <p class="cart-author" id="cart-author">Author</p>
           <div class="item-div">
-           <p class="cart-items">Items:<span class="number-item">x</span></p>
-           <button class="cart-add cart-btn">+</button>
-           <button class="cart-remove cart-btn">-</button>
+           <p class="cart-items">Items:<span class="number-item" id="number-item">x</span></p>
+           <button class="cart-add cart-btn" id="cart-add-btn">+</button>
+           <button class="cart-remove cart-btn" id="cart-remove-btn">-</button>
           </div>
         </div>
-        <p class="cart-price">Price</p>
+        <p class="cart-price" id="cart-price">Price</p>
           </div>
-          <p class="total-p">Total amount(<span class="total-items">x</span> items): <span class="total-price">x</span>SEK</p>
-        </div>
-          <button class="cart-checkout-btn btn">CHECKOUT</button>
+          <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
+        </div> -->
+          <button class="cart-checkout-btn btn" id="cart-checkout-btn">CHECKOUT</button>
 
       </section>
   </main>
