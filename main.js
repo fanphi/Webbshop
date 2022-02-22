@@ -1,8 +1,6 @@
 function addToCart(bookId) {
   const items = JSON.parse(localStorage.getItem("cartItems")) || [];
-
   const item = items.find((item) => item.book === bookId);
-
   if (item) {
     item.count += 1;
   } else {
@@ -12,13 +10,13 @@ function addToCart(bookId) {
     });
   }
   localStorage.setItem("cartItems", JSON.stringify(items));
-  console.log(items);
-}
-//Fanny & Fredrikas funktion för att skriva ut html i varukorgen
-//Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items längst ner om det är fler än en bok i varukorgen
-//Koppla plus&minusknapparna till det
-function generateCartItems(json){
-  const cartItemWrapper = document.getElementById("cart-wrapper");
+   console.log(items);
+ }
+ //Fanny & Fredrikas funktion för att skriva ut html i varukorgen
+ //Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items
+ //Koppla plus&minusknapparna till det
+ function generateCartItems(json){
+   const cartItemWrapper = document.getElementById("cart-wrapper");
   if(cartItemWrapper){
     cartItemWrapper.innerHTML = "";  
     //hämta info från local storage
@@ -54,10 +52,6 @@ function generateCartItems(json){
     })
   }
 }
-
-
-
-
 function readJson() {
   fetch("./data/products.json")
     .then((response) => {
@@ -68,11 +62,9 @@ function readJson() {
     })
     .then((json) => {
       console.log(json.categories);
-
       const params = new URLSearchParams(location.search);
       let categoryId = params.get("category");
       let bookId = params.get("bookid");
-
       console.log(bookId);
       generateCartItems(json);
       const productWrapper = document.getElementById("productContainer");
@@ -90,27 +82,22 @@ function readJson() {
       
       const buyButton = document.querySelectorAll(".buy");
       const searchFilter = document.getElementById("searchInput");
-
       searchFilter.addEventListener("keyup", (event) => {
         filter();
       });
-
       buyButton.forEach((el) =>
         el.addEventListener("click", (event) => {
           addToCart(el.getAttribute("book-id"));
         })
       );
-
       function filter() {
         let value = searchFilter.value;
         var filter = value.toUpperCase();
-
         var list = document.getElementById("productContainer");
         var divs = list.getElementsByTagName("div");
         for (var i = 0; i < divs.length; i++) {
           var a = divs[i].getElementsByTagName("h2")[0];
           var b = divs[i].getElementsByTagName("h3")[0];
-
           if (a || b) {
             if (
               a.innerHTML.toUpperCase().indexOf(filter) > -1 ||
@@ -125,7 +112,6 @@ function readJson() {
           }
         }
       }
-
       function generateProducts(data) {
         var generateProduct = data.categories.forEach((item) => {
           if (item.categoryName == categoryId) {
@@ -151,7 +137,6 @@ function readJson() {
           }
         });
       }
-
       function generateCategory(data) {
         const categoryCount = data.categories;
         console.log(categoryCount);
@@ -165,7 +150,6 @@ function readJson() {
         });
         var categorySelect = document.querySelectorAll(".category-container");
       }
-
       function generateProductPage(data) {
         var generateProduct = data.categories.forEach((item) => {
           const names = item.books.map((product) => ({
@@ -196,3 +180,59 @@ function readJson() {
     });
 }
 readJson();
+
+// login form validation "amin"
+
+
+const formButn= document.getElementById("formButn")
+const signOut = document.querySelector(".hidden")
+
+
+
+const getfromLocal=JSON.parse(localStorage.getItem("user")) 
+const email= getfromLocal[0].email
+const password= getfromLocal[0].password
+
+
+
+
+formButn.addEventListener("click",function(e){
+ 
+const userName=document.getElementById("user-name").value;
+const userPass=document.getElementById("user-pass").value;
+if((userName == email)&&(userPass == password)){
+  window.location.href = "http:http://127.0.0.1:5500/index.html";
+  alert("Success! You are now logged in")
+  signOut.innerHTML="Sign out"
+  localStorage.setItem("email",email)
+  localStorage.setItem("password",password)
+  
+}
+
+
+else{
+  alert("Oops, something went wrong! Please review your information and try again.")
+  e.defaultPrevented();
+  
+}
+})
+
+
+signOut.addEventListener("click",function(){
+  localStorage.removeItem("email")
+  localStorage.removeItem("password")
+  window.location.href ="http://127.0.0.1:5500/login.html"
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
