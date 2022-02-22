@@ -55,7 +55,7 @@
     },
     {
       "categoryName": "science",
-      "categoryBgImage": "./img/poetry1.jfif",
+      "categoryBgImage": "./img/science1.jfif",
       "desc": "eu blandit nulla aliquet. Cras auctor efficitur ",
       "books": [
         {
@@ -107,7 +107,7 @@
     },
     {
       "categoryName": "classics",
-      "categoryBgImage": "./img/poetry1.jfif",
+      "categoryBgImage": "./img/classic1.jfif",
       "desc": "eu blandit nulla aliquet. Cras auctor efficitur ",
       "books": [
         {
