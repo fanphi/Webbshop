@@ -181,6 +181,21 @@ function readJson() {
 }
 readJson();
 
+//Fanny länka checkout knapp till checkout formulär + alert om shopping cart är tom
+  let myCheckoutButton = document.querySelector("#cart-checkout-btn");
+
+  if (window.location.href==="http://127.0.0.1:5500/shoppingcart.html") {
+    myCheckoutButton.addEventListener("click",()=>{
+      
+      if(localStorage.getItem("cartItems")=== null){
+        alert("You need to add an item to the shopping cart!")
+      }
+      else{
+      window.location.href="http://127.0.0.1:5500/checkout.html";
+      }
+    });
+  };
+
 // login form validation "amin"
 
 
@@ -201,10 +216,9 @@ formButn.addEventListener("click",function(e){
 const userName=document.getElementById("user-name").value;
 const userPass=document.getElementById("user-pass").value;
 if((userName == email)&&(userPass == password)){
-  window.location.href = "http://127.0.0.1:5500/index.html";
-  signOut.innerText="Sign out";
-  alert("Success! You are now logged in");
-  
+  window.location.href = "http://127.0.0.1:5500/logout.html";
+  alert("Success! You are now logged in")
+  signOut.innerHTML="Sign out"
   localStorage.setItem("email",email)
   localStorage.setItem("password",password)
   
@@ -218,23 +232,9 @@ else{
 }
 })
 
-// sign out
 
 signOut.addEventListener("click",function(){
   localStorage.removeItem("email")
   localStorage.removeItem("password")
   window.location.href ="http://127.0.0.1:5500/login.html"
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
