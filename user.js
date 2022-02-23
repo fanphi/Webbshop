@@ -32,7 +32,13 @@
        e.preventDefault();
        console.log('något händer')
        addUser();
+       
+       alert ("Your account successfully created")
+       window.location.href = "http://127.0.0.1:5500/login.html";
+      
+    
   })
 
 
 })();
+

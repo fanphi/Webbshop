@@ -16,16 +16,23 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-          <a href="./login.html"><i class="fa-solid fa-user"></i></a>
-          <a class="hidden" href="./login.html">Sign up/ Log in</a>
+          <a href="./login.html?page=login"><i class="fa-solid fa-user"></i></a>
+          <a class="hidden log-in-button" href="./login.html?page=login"
+            >Sign up/ Log in</a
+          >
           <!-- adderar hidden class till länkarna-->
           <br />
-          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-          <a class="hidden" href="">Shopping cart</a>
+          <a href="./shoppingcart.html?page=shoppingcart"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          <a class="hidden" href="./shoppingcart.html?page=shoppingcart"
+            >Shopping cart</a
+          >
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
       <div class="nav-wrapper">
+<<<<<<< HEAD
       <nav class="header-nav">
         <a href="./index.html">Start </a>
         <a class="categ-link" href="index.html?category=poetry">Poetry</a>
@@ -42,16 +49,62 @@
           <label for="user-name">Email</label>
           <input type="text" class="username" id="user-name" placeholder="johndoe@email.com" required>
           <br>
+=======
+        <nav class="header-nav">
+          <a href="index.html">Start </a>
+          <a
+            class="categ-link"
+            href="index.html?category=poetry&page=categorypage"
+            >Poetry</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=science&page=categorypage"
+            >Science</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=classics&page=categorypage"
+            >Classics</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="login-box">
+        <h2>Login to your account!</h2>
+
+        <form action="" class="login-form" id="user-login-form">
+          <label for="user-name">Username</label>
+          <input
+            type="text"
+            class="username"
+            id="user-name"
+            placeholder="johndoe@email.com"
+            required
+          />
+          <br />
+>>>>>>> main
           <label for="user-pass">Password</label>
-          <input type="password" class="password" id="user-pass" minlength="6" maxlength="14" placeholder="******" required>
-          <br>
-          <button class="login-button btn">Log in</button>
-        </form> 
-        <br>
+          <input
+            type="password"
+            class="password"
+            id="user-pass"
+            minlength="6"
+            maxlength="14"
+            placeholder="******"
+            required
+          />
+          <br />
+          <button class="login-button btn" id="formButn">Log in</button>
+        </form>
+        <br />
         <div class="login-box-footer">
           <p>Don't have an account?</p>
-          <a href="./user.html" target="_blank" rel="noopener noreferrer">Sign up</a>
-          
+          <a href="./user.html" target="_blank" rel="noopener noreferrer"
+            >Sign up</a
+          >
         </div>
       </section>
     </main>
@@ -61,7 +114,6 @@
         <p class="footer-left-adress">Tulegatan-121</p>
         <p class="footer-left-adress">11386-Stockholm</p>
         <p class="e-mail">bookstore@gmail.com</p>
-        
       </div>
       <div class="footer-column-middle">
         <div class="payment-option-container">
@@ -77,13 +129,17 @@
           <i class="fa-brands fa-facebook"></i>
         </div>
         <div class="footer-cookies-text-container">
-          <p class="footer-cookies-text"><br>
+          <p class="footer-cookies-text">
+            <br />
             We use cookies to give best service
-          <p>
+          </p>
+
+          <p></p>
           <p class="footer-copyright-text">&copy;2022 Bookstore</p>
         </div>
       </div>
-    </footer> 
+    </footer>
     <script src="main.js"></script>
+    <script src="login-validation.js"></script>
   </body>
 </html>

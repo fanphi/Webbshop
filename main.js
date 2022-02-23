@@ -1,8 +1,6 @@
 function addToCart(bookId) {
-  var items = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-  var item = items.find((item) => item.book === bookId);
-
+  const items = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const item = items.find((item) => item.book === bookId);
   if (item) {
     item.count += 1;
   } else {
@@ -10,6 +8,21 @@ function addToCart(bookId) {
       book: bookId,
       count: 1,
     });
+  }
+  localStorage.setItem("cartItems", JSON.stringify(items));
+
+  console.log(items);
+}
+function removeFromCart(bookId) {
+  const items = JSON.parse(localStorage.getItem("cartItems")) || [];
+  const item = items.find((item) => item.book === bookId);
+  const deleteBook = items.indexOf(item);
+  if (item) {
+    if (item.count < 2) {
+      items.splice(deleteBook, 1);
+    } else {
+      item.count -= 1;
+    }
   }
   localStorage.setItem("cartItems", JSON.stringify(items));
   console.log(items);
@@ -25,18 +38,76 @@ function readJson() {
     })
     .then((json) => {
       console.log(json.categories);
-
       const params = new URLSearchParams(location.search);
       let categoryId = params.get("category");
       let bookId = params.get("bookid");
-
       console.log(bookId);
 
       const productWrapper = document.getElementById("productContainer");
       productWrapper.innerHTML = "";
+      let pageCheck = params.get("page");
 
-      if (bookId) {
-        var generateProduct = json.categories.forEach((item) => {
+      switch (pageCheck) {
+        case "categorypage":
+          generateProducts(json);
+          console.log("category-page");
+          break;
+        case "shoppingcart":
+          generateCartItems(json);
+          console.log("shopping-cart-page");
+          break;
+        case "productpage":
+          generateProductPage(json);
+          console.log("product-page");
+          break;
+        case "login":
+          console.log("log-in-page");
+          break;
+        default:
+          generateCategory(json);
+          console.log("start-page");
+      }
+
+      function generateProducts(data) {
+        var generateProduct = data.categories.forEach((item) => {
+          if (item.categoryName == categoryId) {
+            console.log(item.books);
+            const names = item.books.map((product) => ({
+              name: product.title,
+              author: product.author,
+              price: product.price,
+              src: product.bookImage,
+              id: product.id,
+            }));
+            names.forEach((item) => {
+              const newProduct = `<div class="product">
+            <div class="img-frame"><img class="book-img" src="${item.src}"</img></div>
+            <h2 class="book-title">${item.name}</h2>
+            <h3 class="book-author">-${item.author}</h3>
+            <h3 class="category-price">${item.price} kr</h3>
+            <a class="more-info" href="product.html?bookid=${item.id}&page=productpage">More information</a>
+            <button book-id="${item.id}" class="buy btn">ADD TO CART</button>
+          </div>`;
+              productWrapper.insertAdjacentHTML("beforeend", newProduct);
+            });
+          }
+        });
+      }
+      function generateCategory(data) {
+        const categoryCount = data.categories;
+        console.log(categoryCount);
+        categoryCount.forEach((item) => {
+          const newCategory = `<div class="category-container"><a class="select-category" href="index.html?category=${item.categoryName}&page=categorypage" ><div class="product">
+          <div class="img-frame category-frame"><div class="image-container"><img class="book-img" src="${item.categoryBgImage}"></img></div><div class="categ-title-container">
+          <h2 class="categ-title">${item.categoryName}</h2>
+          <p class="categ-desc">${item.desc}</p></div></div>
+        </div></a></div>`;
+          productWrapper.insertAdjacentHTML("beforeend", newCategory);
+        });
+        var categorySelect = document.querySelectorAll(".category-container");
+      }
+      function generateProductPage(data) {
+        var generateProduct = data.categories.forEach((item) => {
           const names = item.books.map((product) => ({
             name: product.title,
             auth: product.author,
@@ -51,61 +122,104 @@ function readJson() {
               const newProduct = `<div class="product-info-container"><div class="product book-page">
               <div class="product-image-container"><img class="book-img" src="${item.src}"</img></div>
             <div class="text-container-product-page"><div class="title-container"><h2 class="book-title">${item.name}, ${item.auth}</h2>
-            <h3 class="category-price"><a class="category-link" href="index.html?category=${item.categ}">${item.categ}</a> ${item.price} kr</h3></div><div class="desc-container"><p class="book-desc-text">${item.desc}</div></div>
+            <h3 class="category-price"><a class="category-link" href="index.html?category=${item.categ}&page=categorypage">${item.categ}</a> ${item.price} kr</h3></div><div class="desc-container"><p class="book-desc-text">${item.desc}</div></div>
             </div><div class="buy-button-container product-info-page"> <button book-id="${item.id}" class="buy btn">ADD TO CART</button></div></div>`;
               productWrapper.insertAdjacentHTML("beforeend", newProduct);
             }
           });
         });
-
-        console.log(json.categories);
-      } else if (!categoryId) {
-        const categoryCount = json.categories;
-        console.log(categoryCount);
-        categoryCount.forEach((item) => {
-          const newCategory = `<div class="category-container"><a class="select-category" href="index.html?category=${item.categoryName}" ><div class="product">
-          <div class="img-frame category-frame"><div class="image-container"><img class="book-img" src="${item.categoryBgImage}"></img></div><div class="categ-title-container">
-          <h2 class="categ-title">${item.categoryName}</h2>
-          <p class="categ-desc">${item.desc}</p></div></div>
-        </div></a></div>`;
-          productWrapper.insertAdjacentHTML("beforeend", newCategory);
-        });
-        var categorySelect = document.querySelectorAll(".category-container");
-      } else {
-        var generateProduct = json.categories.forEach((item) => {
-          if (item.categoryName == categoryId) {
-            const names = item.books.map((product) => ({
-              name: product.title,
-              author: product.author,
-              price: product.price,
-              src: product.bookImage,
-              id: product.id,
-            }));
-            names.forEach((item) => {
-              const newProduct = `<div class="product">
-            <div class="img-frame"><img class="book-img" src="${item.src}"</img></div>
-            <h2 class="book-title">${item.name}</h2>
-            <h3 class="book-author">-${item.author}</h3>
-            <h3 class="category-price">${item.price} kr</h3>
-            <a class="more-info" href="product.html?bookid=${item.id}">More information</a>
-            <button book-id="${item.id}" class="buy btn">ADD TO CART</button>
-          </div>`;
-              productWrapper.insertAdjacentHTML("beforeend", newProduct);
-            });
-          }
-        });
       }
+      //Fanny & Fredrikas funktion för att skriva ut html i varukorgen
+      //Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items
+      //Koppla plus&minusknapparna till det
+      function generateCartItems(json) {
+        const cartItemWrapper = document.getElementById("productContainer");
 
+        if (cartItemWrapper) {
+          cartItemWrapper.innerHTML = "";
+          //hämta info från local storage
+          const items = JSON.parse(localStorage.getItem("cartItems"));
+          items.forEach((item) => {
+            //loopa igenom och hämta id
+            console.log(item);
+            //matcha id med id från data och skriv ut titel, författare, omslag, pris
+            json.categories.forEach((category) => {
+              category.books.forEach((book) => {
+                if (item.book == book.id) {
+                  console.log(book);
+                  const newCartItem = ` <div class="cart-wrapper">
+                  <div class="cart-products-wrapper">
+                   <img src="${book.bookImage}" alt="picture of book" class="cart-img" id="cart-img">
+                   <div class="cart-inner-wrapper">
+                   <h4 class="cart-title" id="cart-title">${book.title}</h4>
+                   <p class="cart-author" id="cart-author">${book.author}</p>
+                  <div class="item-div">
+                   <p class="cart-items">Items:<span class="number-item" id="number-item">${item.count}</span></p>
+                   <button class="cart-add cart-btn buy" book-id="${book.id}" id="cartAddBtn"  cart-pg="cartPage">+</button>
+                   <button class="cart-remove cart-btn remove" book-id="${book.id}" cart-pg="cartPage" id="cartRemoveBtn">-</button>
+                  </div>
+                </div>
+                <p class="cart-price" id="cart-price">${book.price}SEK</p>
+                  </div>
+                  <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
+                </div>`;
+                  cartItemWrapper.insertAdjacentHTML("beforeend", newCartItem);
+                }
+              });
+            });
+          });
+        }
+      }
       const buyButton = document.querySelectorAll(".buy");
+      const butnSelect = document.querySelector("#productContainer");
 
-      buyButton.forEach((el) =>
-        el.addEventListener("click", (event) => {
-          addToCart(el.getAttribute("book-id"));
-        })
-      );
+      butnSelect.addEventListener("click", function (event) {
+        let checkCartPage = event.target.getAttribute("cart-pg");
+
+        if (event.target.tagName.toLowerCase() === "button") {
+          switch (checkCartPage) {
+            case "cartPage":
+              if (event.target.classList.contains("buy")) {
+                addToCart(event.target.getAttribute("book-id"));
+                generateCartItems(json);
+              } else if (event.target.classList.contains("remove")) {
+                removeFromCart(event.target.getAttribute("book-id"));
+                generateCartItems(json);
+              }
+              break;
+            default:
+              addToCart(event.target.getAttribute("book-id"));
+          }
+        }
+      });
     })
-    .catch(function () {
+    .catch(function (e) {
       console.log("error");
+      console.log(e);
     });
 }
 readJson();
+
+//Fanny länka checkout knapp till checkout formulär + alert om shopping cart är tom
+let myCheckoutButton = document.querySelector("#cart-checkout-btn");
+
+if (window.location.href === "http://127.0.0.1:5500/shoppingcart.html") {
+  myCheckoutButton.addEventListener("click", () => {
+    if (localStorage.getItem("cartItems") === null) {
+      alert("You need to add an item to the shopping cart!");
+    } else {
+      window.location.href = "http://127.0.0.1:5500/checkout.html";
+    }
+  });
+}
+if (localStorage.getItem("currentUser") !== null) {
+  console.log("logged in user: " + localStorage.getItem("currentUser"));
+  const signOut = document.querySelector(".log-in-button");
+  signOut.addEventListener("click", function () {
+    localStorage.removeItem("currentUser");
+    window.location.href = "./index.html";
+  });
+  signOut.innerHTML = "Log out";
+} else {
+  console.log("logged out");
+}

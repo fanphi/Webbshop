@@ -16,28 +16,51 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-          <a href="./login.html"><i class="fa-solid fa-user"></i></a>
-          <a class="hidden" href="./login.html">Sign up/ Log in</a>
+          <a href="./login.html?page=login"><i class="fa-solid fa-user"></i></a>
+          <a class="hidden log-in-button" href="./login.html?page=login"
+            >Sign up/ Log in</a
+          >
           <!-- adderar hidden class till länkarna-->
           <br />
-          <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
-          <a class="hidden" href="">Shopping cart</a>
+          <a href="./shoppingcart.html?page=shoppingcart"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          <a class="hidden" href="./shoppingcart.html?page=shoppingcart"
+            >Shopping cart</a
+          >
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
       <div class="nav-wrapper">
         <nav class="header-nav">
           <a href="index.html">Start </a>
-          <a class="categ-link" href="index.html?category=poetry">Poetry</a>
-          <a class="categ-link" href="index.html?category=science">Science</a>
-          <a class="categ-link" href="index.html?category=classics">Classics</a>
+          <a
+            class="categ-link"
+            href="index.html?category=poetry&page=categorypage"
+            >Poetry</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=science&page=categorypage"
+            >Science</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=classics&page=categorypage"
+            >Classics</a
+          >
         </nav>
       </div>
     </header>
     <main>
       <section class="start-headline">
         <h1 class="start-h1">BOOKTUARY</h1>
-        <p class="start-info">Welcome to our brand new bookstore!</p>
+        <p class="start-info">Welcome to our brand new webshop!</p>
+      </section>
+      <section class="filter-section visible">
+        <div class="filter-container">
+          <input id="searchInput" type="text" placeholder="Search" />
+        </div>
       </section>
       <section class="start-content">
         <div id="productContainer" class="product-container">
@@ -84,5 +107,6 @@
       </div>
     </footer>
     <script src="main.js"></script>
+    <script src="filter.js"></script>
   </body>
 </html>
