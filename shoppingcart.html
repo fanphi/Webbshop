@@ -16,31 +16,48 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-          <a href="./login.html"><i class="fa-solid fa-user"></i></a>
-          <a class="hidden" href="./login.html">Sign up/ Log in</a>
+          <a href="./login.html?page=login"><i class="fa-solid fa-user"></i></a>
+          <a class="hidden log-in-button" href="./login.html?page=login"
+            >Sign up/ Log in</a
+          >
           <!-- adderar hidden class till länkarna-->
           <br />
-          <a href="./shoppingcart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-          <a class="hidden" href="./shoppingcart.html">Shopping cart</a>
+          <a href="./shoppingcart.html?page=shoppingcart"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          <a class="hidden" href="./shoppingcart.html?page=shoppingcart"
+            >Shopping cart</a
+          >
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
       <div class="nav-wrapper">
         <nav class="header-nav">
           <a href="index.html">Start </a>
-          <a class="categ-link" href="index.html?category=poetry">Poetry</a>
-          <a class="categ-link" href="index.html?category=science">Science</a>
-          <a class="categ-link" href="index.html?category=classics">Classics</a>
+          <a
+            class="categ-link"
+            href="index.html?category=poetry&page=categorypage"
+            >Poetry</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=science&page=categorypage"
+            >Science</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=classics&page=categorypage"
+            >Classics</a
+          >
         </nav>
       </div>
     </header>
-  <main>
+    <main>
       <section class="cart-section">
-          <h2 class="cart-h2">Your shopping cart</h2>
-          <div class="cart-first-wrapper">
-          <!-- <div class="cart-wrapper" id="cart-wrapper"></div> -->
-          <div class="cart-wrapper" id="cart-wrapper">
-          <!-- <div class="cart-products-wrapper">
+        <h2 class="cart-h2">Your shopping cart</h2>
+        <div class="cart-wrapper" id="productContainer"></div>
+        <!-- <div class="cart-wrapper" id="cart-wrapper">
+          <div class="cart-products-wrapper">
            <img src="" alt="picture of book" class="cart-img" id="cart-img">
            <div class="cart-inner-wrapper">
            <h4 class="cart-title" id="cart-title">Title</h4>
@@ -52,15 +69,14 @@
           </div>
         </div>
         <p class="cart-price" id="cart-price">Price</p>
-          </div> -->
-        
-        </div>
-        <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
           </div>
-          <button class="cart-checkout-btn btn" id="cart-checkout-btn">CHECKOUT</button>
-
+          <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
+        </div> -->
+        <button class="cart-checkout-btn btn" id="cart-checkout-btn">
+          CHECKOUT
+        </button>
       </section>
-  </main>
+    </main>
     <footer class="main-footer">
       <div class="footer-column-left">
         <h2 class="footer-left-title">Booktuary</h2>

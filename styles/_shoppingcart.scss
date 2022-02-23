@@ -8,8 +8,7 @@
         @include booktuary-font;
        margin: 10% 0 10% 0;
     }
-
-    .cart-first-wrapper{
+    .cart-wrapper{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -17,13 +16,6 @@
         background-color: blanchedalmond;
         height: 50%;
         width: 100%;
-    .cart-wrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-     
         .cart-products-wrapper{
             margin-top: 5%;
             display: flex;
@@ -73,14 +65,12 @@
             }
          }
       }
-    }
       .total-p{
           margin: 5%;
           position: relative;
           left: 15%;
       }
-    
-}
+    }
         .cart-checkout-btn{
             margin: 5% 0;
             
