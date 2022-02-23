@@ -12,7 +12,7 @@ function addToCart(bookId) {
   localStorage.setItem("cartItems", JSON.stringify(items));
    console.log(items);
  }
- //Fanny & Fredrikas funktion för att skriva ut html i varukorgen
+  //Fanny & Fredrikas funktion för att skriva ut html i varukorgen
  //Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items
  //Koppla plus&minusknapparna till det
  function generateCartItems(json){
@@ -36,22 +36,45 @@ function addToCart(bookId) {
              <h4 class="cart-title" id="cart-title">${book.title}</h4>
              <p class="cart-author" id="cart-author">${book.author}</p>
             <div class="item-div">
-             <p class="cart-items">Items:<span class="number-item" id="number-item">x</span></p>
-             <button class="cart-add cart-btn" id="cart-add-btn">+</button>
+             <p class="cart-items">Items:<span class="number-item" id="number-item">${item.count}</span></p>
              <button class="cart-remove cart-btn" id="cart-remove-btn">-</button>
+             <button class="cart-add cart-btn buy" book-id="${book.id}"  id="cart-add-btn">+</button>
             </div>
           </div>
           <p class="cart-price" id="cart-price">${book.price}SEK</p>
             </div>
-            <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
-          </div>`;
+           `;
            cartItemWrapper.insertAdjacentHTML("beforeend", newCartItem);
           }
         })
       })
     })
   }
-}
+ 
+
+    //Fanny och Fredrika funktion för att hålla koll på antal cartitems
+    // let myItemCount = [];
+    // myItemCount = JSON.parse(localStorage.getItem("cartItems"));
+    // console.log(myItemCount[0].count);//visar count i första objektet i arrayen
+ 
+
+    // //Fixa lägga till och ta bort knappar
+    // let myAddBtn = document.querySelector("#cart-add-btn");
+    // let myRemoveBtn = document.querySelector("#cart-remove-btn");
+
+    // myAddBtn.addEventListener("click",()=>{
+    //     console.log("klickar plus test");
+        
+
+    // });
+
+    // myRemoveBtn.addEventListener("click",()=>{
+    //   console.log("klickar minus test");
+    // });
+ }
+
+
+
 function readJson() {
   fetch("./data/products.json")
     .then((response) => {
@@ -191,7 +214,7 @@ readJson();
         alert("You need to add an item to the shopping cart!")
       }
       else{
-      window.location.href="http://127.0.0.1:5500/checkout.html";
+      window.location.href="./checkout.html";
       }
     });
   };
