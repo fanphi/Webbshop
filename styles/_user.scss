@@ -1,44 +1,45 @@
 
-    .form-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-top: 5%;
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
        
-       h2{
+    h2 {
         @include booktuary-font;
         margin: 5% 0%;
-       } 
+    } 
 
-        .userform {
-            display: flex;
-            flex-direction: column;
-            width: 75%;
-            font-size: small;
+    .userform {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        font-size: small;
 
-            .input-field {
-                border-radius: 3px;
-                border: none;
-                height: 1.3rem;
-            }
-            label {
-                margin-top: 5%;
-            }
+        .input-field {
+            border-radius: 3px;
+            border: none;
+            height: 1.3rem;
+        }
 
-            .labelTerms{
-                font-size: xx-small;
-            }
+        label {
+             margin-top: 5%;
+        }
 
-            .create.btn{
-                margin: 8% 0%;
-            }
+        .labelTerms{
+            font-size: xx-small;
+        }
 
-            p {
-                margin-top: 3%;
-            }
+        .create.btn{
+            margin: 8% 0%;
+        }
+
+        p {
+            margin-top: 3%;
         }
     }
+}
     
 
 
