@@ -702,12 +702,6 @@ main .login-box .login-button, main .login-form .login-button {
   color: blanchedalmond;
 }
 
-.cart-section .cart-wrapper .total-p {
-  margin: 5%;
-  position: relative;
-  left: 15%;
-}
-
 .cart-section .cart-checkout-btn {
   margin: 5% 0;
 }

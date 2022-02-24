@@ -65,6 +65,9 @@ function readJson() {
         case "login":
           console.log("log-in-page");
           break;
+        case "checkout":
+          console.log("checkout-page");
+          break;
         default:
           generateCategory(json);
           console.log("start-page");
@@ -179,11 +182,18 @@ function readJson() {
           });
           console.log(countB);
           console.log(countP);
-          const totalPrice = `<p class="total-p">
-          Total amount(<span class="total-items" id="total-items">${countB}</span>
-          items): <span class="total-price" id="total-price">${countP}</span>SEK
-        </p>`;
-          cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          if (countB < 1) {
+            const totalPrice = `<p class="total-p">
+            Din varukorg är tom!
+          </p>`;
+            cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          } else {
+            const totalPrice = `<p class="total-p">
+            Total amount(<span class="total-items" id="total-items">${countB}</span>
+            items): <span class="total-price" id="total-price">${countP}</span>SEK
+          </p>`;
+            cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          }
         }
       }
       const buyButton = document.querySelectorAll(".buy");
@@ -218,6 +228,16 @@ readJson();
 
 if (localStorage.getItem("currentUser") !== null) {
   console.log("logged in user: " + localStorage.getItem("currentUser"));
+  const checkOutFormElem = document.querySelector("#checkoutForm");
+  let currentU = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(currentU.name);
+  if (checkOutFormElem) {
+    let autoFillFields = document.querySelectorAll("[autofill]");
+    autoFillFields.forEach((item) => {
+      let cItem = item.getAttribute("autofill");
+      item.value = currentU[cItem];
+    });
+  }
   const signOut = document.querySelector(".log-in-button");
   signOut.addEventListener("click", function () {
     localStorage.removeItem("currentUser");
