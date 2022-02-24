@@ -1,6 +1,7 @@
 function addToCart(bookId) {
   const items = JSON.parse(localStorage.getItem("cartItems")) || [];
   const item = items.find((item) => item.book === bookId);
+
   if (item) {
     item.count += 1;
   } else {
@@ -13,6 +14,7 @@ function addToCart(bookId) {
 
   console.log(items);
 }
+
 function removeFromCart(bookId) {
   const items = JSON.parse(localStorage.getItem("cartItems")) || [];
   const item = items.find((item) => item.book === bookId);
@@ -146,6 +148,7 @@ function readJson() {
             json.categories.forEach((category) => {
               category.books.forEach((book) => {
                 if (item.book == book.id) {
+                  const totalP = item.count * book.price;
                   console.log(book);
                   const newCartItem = ` <div class="cart-wrapper">
                   <div class="cart-products-wrapper">
@@ -154,20 +157,34 @@ function readJson() {
                    <h4 class="cart-title" id="cart-title">${book.title}</h4>
                    <p class="cart-author" id="cart-author">${book.author}</p>
                   <div class="item-div">
-                   <p class="cart-items">Items:<span class="number-item" id="number-item">${item.count}</span></p>
+                   <p class="cart-items">Items:<span class="number-item" totalPrice=${totalP} id="number-item">${item.count}</span></p>
                    <button class="cart-add cart-btn buy" book-id="${book.id}" id="cartAddBtn"  cart-pg="cartPage">+</button>
                    <button class="cart-remove cart-btn remove" book-id="${book.id}" cart-pg="cartPage" id="cartRemoveBtn">-</button>
                   </div>
                 </div>
                 <p class="cart-price" id="cart-price">${book.price}SEK</p>
                   </div>
-                  <p class="total-p">Total amount(<span class="total-items" id="total-items">x</span> items): <span class="total-price" id="total-price">x</span>SEK</p>
                 </div>`;
                   cartItemWrapper.insertAdjacentHTML("beforeend", newCartItem);
                 }
               });
             });
           });
+          let totalBooks = document.querySelectorAll(".number-item");
+          let countB = 0;
+          let countP = 0;
+          totalBooks.forEach((item) => {
+            countB += parseInt(item.textContent);
+            countP += parseInt(item.getAttribute("totalPrice"));
+            console.log(item.textContent);
+          });
+          console.log(countB);
+          console.log(countP);
+          const totalPrice = `<p class="total-p">
+          Total amount(<span class="total-items" id="total-items">${countB}</span>
+          items): <span class="total-price" id="total-price">${countP}</span>SEK
+        </p>`;
+          cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
         }
       }
       const buyButton = document.querySelectorAll(".buy");
