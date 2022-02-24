@@ -65,6 +65,9 @@ function readJson() {
         case "login":
           console.log("log-in-page");
           break;
+        case "checkout":
+          console.log("checkout-page");
+          break;
         default:
           generateCategory(json);
           console.log("start-page");
@@ -180,11 +183,18 @@ function readJson() {
           });
           console.log(countB);
           console.log(countP);
-          const totalPrice = `<p class="total-p">
-          Total amount(<span class="total-items" id="total-items">${countB}</span>
-          items): <span class="total-price" id="total-price">${countP}</span>SEK
-        </p>`;
-          cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          if (countB < 1) {
+            const totalPrice = `<p class="total-p">
+            Din varukorg är tom!
+          </p>`;
+            cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          } else {
+            const totalPrice = `<p class="total-p">
+            Total amount(<span class="total-items" id="total-items">${countB}</span>
+            items): <span class="total-price" id="total-price">${countP}</span>SEK
+          </p>`;
+            cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          }
         }
       }
       const buyButton = document.querySelectorAll(".buy");
@@ -220,17 +230,27 @@ readJson();
 //Fanny länka checkout knapp till checkout formulär + alert om shopping cart är tom
 let myCheckoutButton = document.querySelector("#cart-checkout-btn");
 
-if (window.location.href === "http://127.0.0.1:5500/shoppingcart.html") {
+if (myCheckoutButton) {
   myCheckoutButton.addEventListener("click", () => {
     if (localStorage.getItem("cartItems") === null) {
       alert("You need to add an item to the shopping cart!");
     } else {
-      window.location.href = "http://127.0.0.1:5500/checkout.html";
+      window.location.href = "./checkout.html";
     }
   });
 }
 if (localStorage.getItem("currentUser") !== null) {
   console.log("logged in user: " + localStorage.getItem("currentUser"));
+  const checkOutFormElem = document.querySelector("#checkoutForm");
+  let currentU = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(currentU.name);
+  if (checkOutFormElem) {
+    let autoFillFields = document.querySelectorAll("[autofill]");
+    autoFillFields.forEach((item) => {
+      let cItem = item.getAttribute("autofill");
+      item.value = currentU[cItem];
+    });
+  }
   const signOut = document.querySelector(".log-in-button");
   signOut.addEventListener("click", function () {
     localStorage.removeItem("currentUser");
