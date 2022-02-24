@@ -16,46 +16,70 @@
       <div class="logo-link-wrapper">
         <img class="logo" src="./img/logotype" alt="logotype" />
         <nav class="login-nav">
-         <i class="fa-solid fa-user"></i>
-          <a class="hidden" href="">Sign up/ Log in</a>
+          <a href="./login.html?page=login"><i class="fa-solid fa-user"></i></a>
+          <a class="hidden log-in-button" href="./login.html?page=login"
+            >Sign up/ Log in</a
+          >
           <!-- adderar hidden class till länkarna-->
           <br />
-          <i class="fa-solid fa-cart-shopping"></i>
-          <a class="hidden" href="./shoppingcart.html">Shopping cart</a>
+          <a href="./shoppingcart.html?page=shoppingcart"
+            ><i class="fa-solid fa-cart-shopping"></i
+          ></a>
+          <a class="hidden" href="./shoppingcart.html?page=shoppingcart"
+            >Shopping cart</a
+          >
           <!-- adderar hidden class till länkarna-->
         </nav>
       </div>
       <div class="nav-wrapper">
         <nav class="header-nav">
-          <a href="?category=poetry">Start </a>
-          <a href="?category=classics">Classics</a>
-          <a href="?category=science">Science</a>
-          <a href="?category=poetry">Poetry</a>
+          <a href="index.html">Start </a>
+          <a
+            class="categ-link"
+            href="index.html?category=poetry&page=categorypage"
+            >Poetry</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=science&page=categorypage"
+            >Science</a
+          >
+          <a
+            class="categ-link"
+            href="index.html?category=classics&page=categorypage"
+            >Classics</a
+          >
         </nav>
       </div>
     </header>
     <main>
-        <section  class="form-wrapper">
+      <section class="form-wrapper">
         <h2>Create new account</h2>
         <form id="createUser" class="userform">
-            <label for="name">Full name* </label>
-            <input type="name" id="name" required class="input-field">
-            <label for="address">Address*</label>
-            <input type="address" id="address" required class="input-field">
-            <label for="zipcode">Postal code*</label>
-            <input type="text" id="zipcode" pattern="[0-9]*" required class="input-field">
-            <label for="city">City*</label>
-            <input type="text" id="city" required class="input-field">
-            <label for="userEmail">Email*</label>
-            <input type="email" id="useremail" required class="input-field">
-            <label for="phone">Phone number</label>
-            <input type="tel" id="phone" class="input-field">
-            <label for="userPassword">Password*</label>
-            <input type="password" id="userpass" required class="input-field">
-            <p>*required. These fields must be filled out to proceed. </p>
-            <button class="create btn" id="createbtn">Create account</button>
+          <label for="name">Full name* </label>
+          <input type="name" id="name" required class="input-field" />
+          <label for="address">Address*</label>
+          <input type="address" id="address" required class="input-field" />
+          <label for="zipcode">Postal code*</label>
+          <input
+            type="text"
+            id="zipcode"
+            pattern="[0-9]*"
+            required
+            class="input-field"
+          />
+          <label for="city">City*</label>
+          <input type="text" id="city" required class="input-field" />
+          <label for="userEmail">Email*</label>
+          <input type="email" id="useremail" required class="input-field" />
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" class="input-field" />
+          <label for="userPassword">Password*</label>
+          <input type="password" id="userpass" required class="input-field" />
+          <p>*required. These fields must be filled out to proceed.</p>
+          <button class="create btn" id="createbtn">Create account</button>
         </form>
-    </section>
+      </section>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">
@@ -63,7 +87,6 @@
         <p class="footer-left-adress">Tulegatan-121</p>
         <p class="footer-left-adress">11386-Stockholm</p>
         <p class="e-mail">booktuary@gmail.com</p>
-        
       </div>
       <div class="footer-column-middle">
         <div class="payment-option-container">
@@ -79,9 +102,12 @@
           <i class="fa-brands fa-facebook"></i>
         </div>
         <div class="footer-cookies-text-container">
-          <p class="footer-cookies-text"><br>
+          <p class="footer-cookies-text">
+            <br />
             We use cookies to give best service
-          <p>
+          </p>
+
+          <p></p>
           <p class="footer-copyright-text">&copy;2022 Booktuary</p>
         </div>
       </div>
