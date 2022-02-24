@@ -85,7 +85,7 @@ function readJson() {
               const newProduct = `<div class="product">
             <div class="img-frame"><img class="book-img" src="${item.src}"</img></div>
             <h2 class="book-title">${item.name}</h2>
-            <h3 class="book-author">-${item.author}</h3>
+            <h3 class="book-author">- ${item.author}</h3>
             <h3 class="category-price">${item.price} kr</h3>
             <a class="more-info" href="product.html?bookid=${item.id}&page=productpage">More information</a>
             <button book-id="${item.id}" class="buy btn">ADD TO CART</button>
@@ -132,8 +132,7 @@ function readJson() {
         });
       }
       //Fanny & Fredrikas funktion för att skriva ut html i varukorgen
-      //Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items
-      //Koppla plus&minusknapparna till det
+
       function generateCartItems(json) {
         const cartItemWrapper = document.getElementById("productContainer");
 
