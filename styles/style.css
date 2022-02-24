@@ -697,4 +697,9 @@ main .login-box .login-button, main .login-form .login-button {
 .cart-section .cart-checkout-btn {
   margin: 5% 0;
 }
+
+.checkout-container {
+  text-align: center;
+  padding: 15px;
+}
 /*# sourceMappingURL=style.css.map */
