@@ -203,15 +203,15 @@ readJson();
 //Fanny länka checkout knapp till checkout formulär + alert om shopping cart är tom
 let myCheckoutButton = document.querySelector("#cart-checkout-btn");
 
-if (window.location.href === "http://127.0.0.1:5500/shoppingcart.html") {
+// if (window.location.href === "http://127.0.0.1:5500/shoppingcart.html") {
   myCheckoutButton.addEventListener("click", () => {
     if (localStorage.getItem("cartItems") === null) {
       alert("You need to add an item to the shopping cart!");
     } else {
-      window.location.href = "http://127.0.0.1:5500/checkout.html";
+      window.location.href = "./checkout.html";
     }
   });
-}
+// }
 if (localStorage.getItem("currentUser") !== null) {
   console.log("logged in user: " + localStorage.getItem("currentUser"));
   const signOut = document.querySelector(".log-in-button");
