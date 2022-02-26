@@ -185,7 +185,8 @@ function readJson() {
           if (countB < 1) {
             const totalPrice = `<p class="total-p">
             Din varukorg är tom!
-          </p>`;
+            </p>`;
+            document.getElementById("cart-checkout-btn").disabled = true;//Fredrika
             cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
           } else {
             const totalPrice = `<p class="total-p">
