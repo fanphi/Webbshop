@@ -45,12 +45,13 @@
 }
 
 .main-header .logo-link-wrapper .login-nav {
-  width: 30%;
+  width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-top: 20px;
   margin-right: 10px;
 }
@@ -60,6 +61,10 @@
   color: #e5c7ab;
   text-decoration: none;
   font-weight: 350;
+}
+
+.main-header .logo-link-wrapper .login-nav a i {
+  margin: 0px 10px;
 }
 
 .main-header .nav-wrapper {
@@ -261,11 +266,12 @@ main .start-content .product-container .book-img {
 
 main .start-content .product-container .book-title {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: large;
 }
 
 main .start-content .product-container .category-price {
   font-size: large;
+  font-weight: lighter;
   font-style: oblique;
 }
 
@@ -282,12 +288,17 @@ main .start-content .product-container .product {
   max-width: min-content;
 }
 
+main .start-content .product-container .product .book-author {
+  font-size: medium;
+  font-weight: lighter;
+}
+
 main .start-content .product-container .product.book-page {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: white;
+  background-color: blanchedalmond;
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -665,6 +676,9 @@ main .login-box .login-button, main .login-form .login-button {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cart-section .cart-wrapper .cart-products-wrapper .cart-inner-wrapper .item-div .cart-btn {
@@ -678,7 +692,7 @@ main .login-box .login-button, main .login-form .login-button {
   background-color: #e5c7ab;
   -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  padding: 0 10%;
+  padding: 0 6%;
   height: 0%;
   margin: 5%;
 }
@@ -688,13 +702,12 @@ main .login-box .login-button, main .login-form .login-button {
   color: blanchedalmond;
 }
 
-.cart-section .cart-wrapper .total-p {
-  margin: 5%;
-  position: relative;
-  left: 15%;
-}
-
 .cart-section .cart-checkout-btn {
   margin: 5% 0;
+}
+
+.checkout-container {
+  text-align: center;
+  padding: 15px;
 }
 /*# sourceMappingURL=style.css.map */

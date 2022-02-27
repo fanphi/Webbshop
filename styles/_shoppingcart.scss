@@ -1,78 +1,78 @@
-.cart-section{
+.cart-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .cart-h2 {
+    @include booktuary-font;
+    margin: 10% 0 10% 0;
+  }
+  .cart-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $light-color;
+    height: 50%;
+    width: 100%;
+    .cart-products-wrapper {
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
 
-    .cart-h2 {
-        @include booktuary-font;
-       margin: 10% 0 10% 0;
-    }
-    .cart-wrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: blanchedalmond;
-        height: 50%;
-        width: 100%;
-        .cart-products-wrapper{
-            margin-top: 5%;
-            display: flex;
-            justify-content: space-between;
-            
-            .cart-img{
-                object-fit: contain;
-                width: 35%;
-                position: relative;
-                margin: 2%;
-            }
-           .cart-price{
-              padding-top: 18%;
-              padding-right: 2%;
-            }
-             .cart-inner-wrapper{
-                 width: 40%;
-                 margin-top: 2%;
-
-                 h4 {
-                     font-size: larger;
-                 }
-               
-             .item-div{
-                margin-top: 10%;
-                display: flex;
-                flex-direction: row;
-
-                .cart-btn{
-                    @include booktuary-font;
-                    font-weight: normal;
-                    font-size: medium;
-                    outline: none;
-                    cursor: pointer;
-                    border: 1px solid $header-color;
-                    border-radius: 5px;
-                    background-color: $accent-color;
-                    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-                   padding: 0 10%;
-                   height: 0%;
-                   margin: 5%;
-                }
-                .cart-btn:hover{
-                    background: #b99e83;
-                    color: blanchedalmond;
-                }
-            }
-         }
+      .cart-img {
+        object-fit: contain;
+        width: 35%;
+        position: relative;
+        margin: 2%;
       }
-      .total-p{
-          margin: 5%;
-          position: relative;
-          left: 15%;
+      .cart-price {
+        padding-top: 18%;
+        padding-right: 2%;
       }
-    }
-        .cart-checkout-btn{
-            margin: 5% 0;
-            
+      .cart-inner-wrapper {
+        width: 40%;
+        margin-top: 2%;
+
+        h4 {
+          font-size: larger;
         }
+
+        .item-div {
+          margin-top: 10%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          .cart-btn {
+            @include booktuary-font;
+            font-weight: normal;
+            font-size: medium;
+            outline: none;
+            cursor: pointer;
+            border: 1px solid $header-color;
+            border-radius: 5px;
+            background-color: $accent-color;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+            padding: 0 6%;//Fredrika testar göra dem lite mindre. 10% från början
+            height: 0%;
+            margin: 5%;
+          }
+          .cart-btn:hover {
+            background: #b99e83;
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+  .cart-checkout-btn {
+    margin: 5% 0;
+  }
+}
+
+.checkout-container {
+  text-align: center;
+  padding: 15px;
 }
