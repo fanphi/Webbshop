@@ -23,6 +23,18 @@
           align-items: space-between;
 }
 
+.main-header .welcome-user {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  font-size: x-small;
+}
+
+@media screen and (min-width: 500px) {
+  .main-header .welcome-user {
+    font-size: medium;
+  }
+}
+
 .main-header .logo-link-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -418,10 +430,6 @@ main .start-content .product-container div a {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
     gap: 25px;
-  }
-  .logo {
-    width: 50%;
-    height: 50%;
   }
   .logo-link-wrapper .login-nav .hidden {
     display: none;

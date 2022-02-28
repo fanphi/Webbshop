@@ -12,6 +12,16 @@
   justify-content: center;
   align-items: space-between;
 
+  
+  .welcome-user{
+      @include booktuary-font;
+      font-weight: 300;
+      font-size: x-small;
+      @media screen and(min-width:500px) {
+        font-size: medium;
+      }
+  }
+
   .logo-link-wrapper {
     display: flex;
     flex-direction: row;
@@ -26,7 +36,7 @@
 
     .login-nav {
       //*Kev ändringar
-      width: 40%; //fredrika testat ändra till 40
+      width: 40%; 
       display: flex;
       justify-content: flex-end;
 
@@ -48,6 +58,7 @@
   .nav-wrapper {
     text-align: center;
     width: 100%;
+
     .header-nav {
       //*Kev ändringar
       display: flex;
@@ -293,11 +304,6 @@ main {
     gap: 25px;
   }
 
-  .logo {
-    //denna gör ingenting & originala körs fortfarande oavsett media
-    width: 50%;
-    height: 50%;
-  }
   .logo-link-wrapper .login-nav .hidden {
     //* Kev, testar med hidden klassen så att texten försvinner i mobile format
     display: none;

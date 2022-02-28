@@ -1,4 +1,5 @@
 (function () {
+  //Fredrikas funktion för skapa användare-formuläret
   const userForm = document.getElementById("createUser");
   const userName = document.getElementById("name");
   const userAddress = document.getElementById("address");
@@ -32,7 +33,7 @@
 
     addUser();
 
-    alert("Your account successfully created");
+    alert("Your account was successfully created!");
     window.location.href = "./login.html";
   });
 })();
