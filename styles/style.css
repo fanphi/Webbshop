@@ -79,6 +79,14 @@
   margin: 0px 10px;
 }
 
+.main-header .logo-link-wrapper .login-nav a i:hover {
+  color: aliceblue;
+}
+
+.main-header .logo-link-wrapper .login-nav a:hover {
+  color: aliceblue;
+}
+
 .main-header .nav-wrapper {
   text-align: center;
   width: 100%;
