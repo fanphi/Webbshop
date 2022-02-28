@@ -26,7 +26,7 @@
 
     .login-nav {
       //*Kev ändringar
-      width: 40%;//fredrika testat ändra till 40
+      width: 40%; //fredrika testat ändra till 40
       display: flex;
       justify-content: flex-end;
 
@@ -37,7 +37,7 @@
         color: $accent-color;
         text-decoration: none;
         font-weight: 350;
-        //Fredrika justerat avståndet mellan ikon och text 
+        //Fredrika justerat avståndet mellan ikon och text
         i {
           margin: 0px 10px;
         }
@@ -62,7 +62,7 @@
         padding: 0px 10px;
         text-transform: capitalize;
 
-        &:hover{
+        &:hover {
           color: aliceblue;
           text-decoration: underline;
         }
@@ -95,7 +95,7 @@ main {
   align-items: center;
   justify-content: flex-start;
   background-color: $logo-color;
-  min-height: 500px;
+  min-height: 600px;
 
   // Fanny styling för innehåll startsida. Både mobil och desktop
   .start-headline {
@@ -199,7 +199,7 @@ main {
         max-width: min-content;
 
         //Fredrikas justering av textstorlek
-        .book-author{
+        .book-author {
           font-size: medium;
           font-weight: lighter;
         }
@@ -293,7 +293,8 @@ main {
     gap: 25px;
   }
 
-  .logo { //denna gör ingenting & originala körs fortfarande oavsett media
+  .logo {
+    //denna gör ingenting & originala körs fortfarande oavsett media
     width: 50%;
     height: 50%;
   }
