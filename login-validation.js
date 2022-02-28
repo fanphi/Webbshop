@@ -2,8 +2,6 @@
 
 const formButn = document.getElementById("formButn");
 
-console.log("user:", JSON.parse(localStorage.getItem("user")));
-
 formButn.addEventListener("click", function (e) {
   const userName = document.getElementById("user-name").value;
   const userPass = document.getElementById("user-pass").value;
@@ -23,5 +21,4 @@ formButn.addEventListener("click", function (e) {
     );
     e.defaultPrevented();
   }
-  console.log("logged in : " + loggedin);
 });

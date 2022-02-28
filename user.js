@@ -29,7 +29,7 @@
 
   userForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("något händer");
+
     addUser();
 
     alert("Your account successfully created");
