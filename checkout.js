@@ -47,7 +47,7 @@ function showCart() {
 
               const newCartItem = `
               <div class="book">
-           <p class="cart-author" id="cart-author">${book.title}, ${book.author} (${item.count}ST)</p>
+           <p class="cart-author" id="cart-author">${book.title}, ${book.author} (${item.count}PC)</p>
            <div class="book-container">
             <span class="numberr-item" totalPrice=${totalP} totalBook=${item.count} id="number-item"></span>
            <p class="cart-price" id="cart-price">${totalP}SEK</p></div></div>
@@ -103,7 +103,7 @@ function generateReceipt(
 
               const newCartItem = `
               <div class="book">
-           <p class="cart-author" id="cart-author">${book.title}, ${book.author} (${item.count}ST)</p>
+           <p class="cart-author" id="cart-author">${book.title}, ${book.author} (${item.count}PC)</p>
            <div class="book-container">
             <span class="number-item" totalPrice=${totalP} totalBook=${item.count} id="number-item"></span>
            <p class="cart-price" id="cart-price">${totalP}SEK</p></div></div>
