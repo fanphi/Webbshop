@@ -12,8 +12,9 @@ function handleSubmit(event) {
   let postalCode = document.querySelector("[autofill=zipcode]").value;
   let city = document.querySelector("[autofill=city]").value;
   let email = document.querySelector("[autofill=email]").value;
+  let comment = document.querySelector("#comments-checkout-input").value;
 
-  generateReceipt(fName, adress, postalCode, city, email);
+  generateReceipt(fName, adress, postalCode, city, email, comment);
 
   receipt.classList.remove("hide-item");
   formContainer.classList.add("hide-item");
@@ -78,7 +79,8 @@ function generateReceipt(
   userAdress,
   userPostalCode,
   userCity,
-  userEmail
+  userEmail,
+  userComment
 ) {
   fetch("./data/products.json")
     .then((response) => {
@@ -120,6 +122,15 @@ function generateReceipt(
 `;
       generateUDetails.insertAdjacentHTML("beforeend", newProduct);
 
+      if (!userComment) {
+        console.log("no-comment");
+      } else {
+        const comments = `<div class="comments-text">
+        <h4>Comments: </h4><p class="user-comment">${userComment}</p>
+       </div>`;
+        generateUDetails.insertAdjacentHTML("beforeend", comments);
+      }
+
       let totalBooks = document.querySelectorAll(".number-item");
       let countB = 0;
       let countP = 0;
@@ -133,6 +144,7 @@ function generateReceipt(
       items): <span class="total-price" id="total-price"> ${countP}</span>SEK
     </p>`;
       generateTotal.insertAdjacentHTML("beforeend", totalPrice);
+
       localStorage.removeItem("cartItems");
     });
 }
