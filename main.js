@@ -70,7 +70,7 @@ function readJson() {
             generateCategory(json);
         }
       }
-      //dynamically generated htmn that gets data from json
+      //dynamically generated html that gets data from json
       function generateProducts(data) {
         var generateProduct = data.categories.forEach((item) => {
           if (item.categoryName == categoryId) {
@@ -108,7 +108,7 @@ function readJson() {
         });
         var categorySelect = document.querySelectorAll(".category-container");
       }
-      //dynamically generated htmn that gets data from json
+      //dynamically generated html that gets data from json
       function generateProductPage(data) {
         var generateProduct = data.categories.forEach((item) => {
           const names = item.books.map((product) => ({
