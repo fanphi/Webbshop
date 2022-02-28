@@ -37,13 +37,13 @@ function showCart() {
 
       items.forEach((item) => {
         //loopa igenom och hämta id
-        console.log(item);
+
         //matcha id med id från data och skriv ut titel, författare, omslag, pris
         json.categories.forEach((category) => {
           category.books.forEach((book) => {
             if (item.book == book.id) {
               const totalP = item.count * book.price;
-              console.log(book);
+
               const newCartItem = `
               <div class="book">
            <p class="cart-author" id="cart-author">${book.title}, ${book.author} (${item.count}ST)</p>
@@ -92,13 +92,13 @@ function generateReceipt(
 
       items.forEach((item) => {
         //loopa igenom och hämta id
-        console.log(item);
+
         //matcha id med id från data och skriv ut titel, författare, omslag, pris
         json.categories.forEach((category) => {
           category.books.forEach((book) => {
             if (item.book == book.id) {
               const totalP = item.count * book.price;
-              console.log(book);
+
               const newCartItem = `
               <div class="book">
            <p class="cart-author" id="cart-author">${book.title}, ${book.author} (${item.count}ST)</p>

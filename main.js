@@ -1,3 +1,4 @@
+//creates localstorage cart items if it does not exist when u add a book to the cart
 function addToCart(bookId) {
   const items = JSON.parse(localStorage.getItem("cartItems")) || [];
   const item = items.find((item) => item.book === bookId);
@@ -11,10 +12,9 @@ function addToCart(bookId) {
     });
   }
   localStorage.setItem("cartItems", JSON.stringify(items));
-
-  console.log(items);
 }
 
+//removes/updates the cart with the specific book removed
 function removeFromCart(bookId) {
   const items = JSON.parse(localStorage.getItem("cartItems")) || [];
   const item = items.find((item) => item.book === bookId);
@@ -27,9 +27,9 @@ function removeFromCart(bookId) {
     }
   }
   localStorage.setItem("cartItems", JSON.stringify(items));
-  console.log(items);
 }
 
+//starts off with
 function readJson() {
   fetch("./data/products.json")
     .then((response) => {
@@ -39,46 +39,41 @@ function readJson() {
       return response.json();
     })
     .then((json) => {
-      console.log(json.categories);
       const params = new URLSearchParams(location.search);
       let categoryId = params.get("category");
       let bookId = params.get("bookid");
-      console.log(bookId);
 
       const productWrapper = document.getElementById("productContainer");
       if (!productWrapper) {
       } else {
         productWrapper.innerHTML = "";
         let pageCheck = params.get("page");
-
+        //checks the parameters for what page it is and run specific function
         switch (pageCheck) {
           case "categorypage":
             generateProducts(json);
-            console.log("category-page");
+
             break;
           case "shoppingcart":
             generateCartItems(json);
-            console.log("shopping-cart-page");
+
             break;
           case "productpage":
             generateProductPage(json);
-            console.log("product-page");
+
             break;
           case "login":
-            console.log("log-in-page");
             break;
           case "checkout":
-            console.log("checkout-page");
             break;
           default:
             generateCategory(json);
-            console.log("start-page");
         }
       }
+      //dynamically generated htmn that gets data from json
       function generateProducts(data) {
         var generateProduct = data.categories.forEach((item) => {
           if (item.categoryName == categoryId) {
-            console.log(item.books);
             const names = item.books.map((product) => ({
               name: product.title,
               author: product.author,
@@ -102,7 +97,7 @@ function readJson() {
       }
       function generateCategory(data) {
         const categoryCount = data.categories;
-        console.log(categoryCount);
+
         categoryCount.forEach((item) => {
           const newCategory = `<div class="category-container"><a class="select-category" href="index.html?category=${item.categoryName}&page=categorypage" ><div class="product">
           <div class="img-frame category-frame"><div class="image-container"><img class="book-img" src="${item.categoryBgImage}"></img></div><div class="categ-title-container">
@@ -113,6 +108,7 @@ function readJson() {
         });
         var categorySelect = document.querySelectorAll(".category-container");
       }
+      //dynamically generated htmn that gets data from json
       function generateProductPage(data) {
         var generateProduct = data.categories.forEach((item) => {
           const names = item.books.map((product) => ({
@@ -149,13 +145,13 @@ function readJson() {
           } else {
             items.forEach((item) => {
               //loopa igenom och hämta id
-              console.log(item);
+
               //matcha id med id från data och skriv ut titel, författare, omslag, pris
               json.categories.forEach((category) => {
                 category.books.forEach((book) => {
                   if (item.book == book.id) {
                     const totalP = item.count * book.price;
-                    console.log(book);
+
                     const newCartItem = ` <div class="cart-wrapper">
                   <div class="cart-products-wrapper">
                    <img src="${book.bookImage}" alt="picture of book" class="cart-img" id="cart-img">
@@ -180,16 +176,15 @@ function readJson() {
               });
             });
           }
+
           let totalBooks = document.querySelectorAll(".number-item");
           let countB = 0;
           let countP = 0;
+          //code sets how many of each book is in shopping cart and also caluclates total price
           totalBooks.forEach((item) => {
             countB += parseInt(item.textContent);
             countP += parseInt(item.getAttribute("totalPrice"));
-            console.log(item.textContent);
           });
-          console.log(countB);
-          console.log(countP);
           if (countB < 1) {
             const totalPrice = `<p class="total-p">
             Din varukorg är tom!
@@ -209,6 +204,7 @@ function readJson() {
       const butnSelect = document.querySelector("#productContainer");
       if (!butnSelect) {
       } else {
+        //event bubbeling since the buttons get dynamically generated so event listener will get removed when content updates
         butnSelect.addEventListener("click", function (event) {
           let checkCartPage = event.target.getAttribute("cart-pg");
 
@@ -236,19 +232,20 @@ function readJson() {
     });
 }
 readJson();
-
+//check if someone is logged in and if is logged in add log-out button and add welcome user message
 if (localStorage.getItem("currentUser") !== null) {
-  console.log("logged in user: " + localStorage.getItem("currentUser"));
   const checkOutFormElem = document.querySelector("#checkoutForm");
   let currentU = JSON.parse(localStorage.getItem("currentUser"));
-
+  //checks if form elements excists
   if (checkOutFormElem) {
     let autoFillFields = document.querySelectorAll("[autofill]");
+    //gets all the fields that need to get filled in if user is logged in and dynamically adds that information
     autoFillFields.forEach((item) => {
       let cItem = item.getAttribute("autofill");
       item.value = currentU[cItem];
     });
   }
+  //changes log out button text
   const signOut = document.querySelector(".log-in-button");
   signOut.addEventListener("click", function () {
     localStorage.removeItem("currentUser");
@@ -261,5 +258,4 @@ if (localStorage.getItem("currentUser") !== null) {
 </p>`;
   navSelector.insertAdjacentHTML("afterbegin", welcomeUser);
 } else {
-  console.log("logged out");
 }
