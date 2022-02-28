@@ -46,33 +46,35 @@ function readJson() {
       console.log(bookId);
 
       const productWrapper = document.getElementById("productContainer");
-      productWrapper.innerHTML = "";
-      let pageCheck = params.get("page");
+      if (!productWrapper) {
+      } else {
+        productWrapper.innerHTML = "";
+        let pageCheck = params.get("page");
 
-      switch (pageCheck) {
-        case "categorypage":
-          generateProducts(json);
-          console.log("category-page");
-          break;
-        case "shoppingcart":
-          generateCartItems(json);
-          console.log("shopping-cart-page");
-          break;
-        case "productpage":
-          generateProductPage(json);
-          console.log("product-page");
-          break;
-        case "login":
-          console.log("log-in-page");
-          break;
-        case "checkout":
-          console.log("checkout-page");
-          break;
-        default:
-          generateCategory(json);
-          console.log("start-page");
+        switch (pageCheck) {
+          case "categorypage":
+            generateProducts(json);
+            console.log("category-page");
+            break;
+          case "shoppingcart":
+            generateCartItems(json);
+            console.log("shopping-cart-page");
+            break;
+          case "productpage":
+            generateProductPage(json);
+            console.log("product-page");
+            break;
+          case "login":
+            console.log("log-in-page");
+            break;
+          case "checkout":
+            console.log("checkout-page");
+            break;
+          default:
+            generateCategory(json);
+            console.log("start-page");
+        }
       }
-
       function generateProducts(data) {
         var generateProduct = data.categories.forEach((item) => {
           if (item.categoryName == categoryId) {
@@ -143,16 +145,18 @@ function readJson() {
           cartItemWrapper.innerHTML = "";
           //hämta info från local storage
           const items = JSON.parse(localStorage.getItem("cartItems"));
-          items.forEach((item) => {
-            //loopa igenom och hämta id
-            console.log(item);
-            //matcha id med id från data och skriv ut titel, författare, omslag, pris
-            json.categories.forEach((category) => {
-              category.books.forEach((book) => {
-                if (item.book == book.id) {
-                  const totalP = item.count * book.price;
-                  console.log(book);
-                  const newCartItem = ` <div class="cart-wrapper">
+          if (!items) {
+          } else {
+            items.forEach((item) => {
+              //loopa igenom och hämta id
+              console.log(item);
+              //matcha id med id från data och skriv ut titel, författare, omslag, pris
+              json.categories.forEach((category) => {
+                category.books.forEach((book) => {
+                  if (item.book == book.id) {
+                    const totalP = item.count * book.price;
+                    console.log(book);
+                    const newCartItem = ` <div class="cart-wrapper">
                   <div class="cart-products-wrapper">
                    <img src="${book.bookImage}" alt="picture of book" class="cart-img" id="cart-img">
                    <div class="cart-inner-wrapper">
@@ -167,11 +171,15 @@ function readJson() {
                 <p class="cart-price" id="cart-price">${book.price}SEK</p>
                   </div>
                 </div>`;
-                  cartItemWrapper.insertAdjacentHTML("beforeend", newCartItem);
-                }
+                    cartItemWrapper.insertAdjacentHTML(
+                      "beforeend",
+                      newCartItem
+                    );
+                  }
+                });
               });
             });
-          });
+          }
           let totalBooks = document.querySelectorAll(".number-item");
           let countB = 0;
           let countP = 0;
@@ -186,7 +194,7 @@ function readJson() {
             const totalPrice = `<p class="total-p">
             Din varukorg är tom!
             </p>`;
-            document.getElementById("cart-checkout-btn").disabled = true;//Fredrika
+            document.getElementById("cart-checkout-btn").disabled = true; //Fredrika
             cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
           } else {
             const totalPrice = `<p class="total-p">
@@ -199,26 +207,28 @@ function readJson() {
       }
       const buyButton = document.querySelectorAll(".buy");
       const butnSelect = document.querySelector("#productContainer");
+      if (!butnSelect) {
+      } else {
+        butnSelect.addEventListener("click", function (event) {
+          let checkCartPage = event.target.getAttribute("cart-pg");
 
-      butnSelect.addEventListener("click", function (event) {
-        let checkCartPage = event.target.getAttribute("cart-pg");
-
-        if (event.target.tagName.toLowerCase() === "button") {
-          switch (checkCartPage) {
-            case "cartPage":
-              if (event.target.classList.contains("buy")) {
+          if (event.target.tagName.toLowerCase() === "button") {
+            switch (checkCartPage) {
+              case "cartPage":
+                if (event.target.classList.contains("buy")) {
+                  addToCart(event.target.getAttribute("book-id"));
+                  generateCartItems(json);
+                } else if (event.target.classList.contains("remove")) {
+                  removeFromCart(event.target.getAttribute("book-id"));
+                  generateCartItems(json);
+                }
+                break;
+              default:
                 addToCart(event.target.getAttribute("book-id"));
-                generateCartItems(json);
-              } else if (event.target.classList.contains("remove")) {
-                removeFromCart(event.target.getAttribute("book-id"));
-                generateCartItems(json);
-              }
-              break;
-            default:
-              addToCart(event.target.getAttribute("book-id"));
+            }
           }
-        }
-      });
+        });
+      }
     })
     .catch(function (e) {
       console.log("error");
@@ -231,7 +241,7 @@ if (localStorage.getItem("currentUser") !== null) {
   console.log("logged in user: " + localStorage.getItem("currentUser"));
   const checkOutFormElem = document.querySelector("#checkoutForm");
   let currentU = JSON.parse(localStorage.getItem("currentUser"));
-  console.log(currentU.name);
+
   if (checkOutFormElem) {
     let autoFillFields = document.querySelectorAll("[autofill]");
     autoFillFields.forEach((item) => {

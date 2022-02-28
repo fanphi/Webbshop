@@ -40,3 +40,40 @@
     justify-content: center;
   }
 }
+
+//hazem kvitto styling
+
+.receipt-container {
+  padding: 25px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+  .sub-text-container {
+    margin-bottom: 5px;
+  }
+  .receipt-title {
+    margin-bottom: 10px;
+  }
+  .order-details-container {
+    margin-bottom: 15px;
+  }
+  .book,
+  .shipping-container {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr;
+    grid-gap: 25px;
+    margin-bottom: 7px;
+  }
+  .titles-container {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr;
+  }
+  .total-price-container {
+    text-align: right;
+    margin-top: 25px;
+  }
+}
+
+.hide-item {
+  display: none;
+}
