@@ -428,9 +428,8 @@ main .start-content .product-container div a {
   }
 }
 
-#searchBok {
-  background-color: #f1ddc7;
-  border-radius: 5%;
+.welcome-user {
+  color: #e5c7ab;
 }
 
 .form-wrapper {
@@ -655,6 +654,10 @@ main .login-box .login-button, main .login-form .login-button {
 
 #totalContainer p.total-p {
   text-align: right;
+}
+
+.comments-text {
+  margin-top: 7px;
 }
 
 .cart-section {
