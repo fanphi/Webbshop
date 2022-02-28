@@ -428,6 +428,10 @@ main .start-content .product-container div a {
   }
 }
 
+.welcome-user {
+  color: #e5c7ab;
+}
+
 .form-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;

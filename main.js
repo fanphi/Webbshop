@@ -255,6 +255,11 @@ if (localStorage.getItem("currentUser") !== null) {
     window.location.href = "./index.html";
   });
   signOut.innerHTML = "Log out";
+  const navSelector = document.querySelector(".login-nav");
+  const welcomeUser = `<p class="welcome-user">
+  Welcome ${currentU.name}
+</p>`;
+  navSelector.insertAdjacentHTML("afterbegin", welcomeUser);
 } else {
   console.log("logged out");
 }
