@@ -1,4 +1,4 @@
-//creates localstorage cart items if it does not exist when u add a book to the cart
+//creates localstorage cart items if it does not exist when you add a book to the cart
 function addToCart(bookId) {
   const items = JSON.parse(localStorage.getItem("cartItems")) || [];
   const item = items.find((item) => item.book === bookId);
@@ -48,7 +48,7 @@ function readJson() {
       } else {
         productWrapper.innerHTML = "";
         let pageCheck = params.get("page");
-        //checks the parameters for what page it is and run specific function
+        //checks the parameters for what page it is and runs a specific function
         switch (pageCheck) {
           case "categorypage":
             generateProducts(json);
@@ -70,7 +70,7 @@ function readJson() {
             generateCategory(json);
         }
       }
-      //dynamically generated htmn that gets data from json
+      //dynamically generated html that gets data from json
       function generateProducts(data) {
         var generateProduct = data.categories.forEach((item) => {
           if (item.categoryName == categoryId) {
@@ -108,7 +108,7 @@ function readJson() {
         });
         var categorySelect = document.querySelectorAll(".category-container");
       }
-      //dynamically generated htmn that gets data from json
+      //dynamically generated html that gets data from json
       function generateProductPage(data) {
         var generateProduct = data.categories.forEach((item) => {
           const names = item.books.map((product) => ({
@@ -187,7 +187,7 @@ function readJson() {
           });
           if (countB < 1) {
             const totalPrice = `<p class="total-p">
-            Din varukorg är tom!
+            Your cart is empty!
             </p>`;
             document.getElementById("cart-checkout-btn").disabled = true; //Fredrika
             cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
@@ -236,7 +236,7 @@ readJson();
 if (localStorage.getItem("currentUser") !== null) {
   const checkOutFormElem = document.querySelector("#checkoutForm");
   let currentU = JSON.parse(localStorage.getItem("currentUser"));
-  //checks if form elements excists
+  //checks if form elements exists
   if (checkOutFormElem) {
     let autoFillFields = document.querySelectorAll("[autofill]");
     //gets all the fields that need to get filled in if user is logged in and dynamically adds that information
