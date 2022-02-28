@@ -595,6 +595,51 @@ main .login-box .login-button, main .login-form .login-button {
           justify-content: center;
 }
 
+.receipt-container {
+  padding: 25px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.receipt-container .sub-text-container {
+  margin-bottom: 5px;
+}
+
+.receipt-container .receipt-title {
+  margin-bottom: 10px;
+}
+
+.receipt-container .order-details-container {
+  margin-bottom: 15px;
+}
+
+.receipt-container .book,
+.receipt-container .shipping-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.1fr;
+      grid-template-columns: 1fr 0.1fr;
+  grid-gap: 25px;
+  margin-bottom: 7px;
+}
+
+.receipt-container .titles-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.1fr;
+      grid-template-columns: 1fr 0.1fr;
+}
+
+.receipt-container .total-price-container {
+  text-align: right;
+  margin-top: 25px;
+}
+
+.hide-item {
+  display: none;
+}
+
 .cart-section {
   display: -webkit-box;
   display: -ms-flexbox;
