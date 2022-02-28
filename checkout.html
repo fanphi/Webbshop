@@ -49,7 +49,7 @@
     <main class="checkout-main">
       <section class="checkout-wrapper">
      <h2 class="checkout-h2">CHECKOUT</h1>
-     <form action="" class="checkout-form" id="checkoutForm">
+     <form  class="checkout-form" id="checkoutForm" name="checkout">
        <label for="name-checkout-input" >Full name*</label>
        <input type="name" id="name-checkout-input" autofill="name"required class="checkout-input">
        <label for="address-checkout-input" >Address*</label>
@@ -64,12 +64,46 @@
        <input type="tel" id="phone-checkout-input" autofill="phone" class="checkout-input">
        <label for="comments-checkout-input">Comments</label>
        <input type="text" id="comments-checkout-input" class="checkout-input">
+       <div class="cart-container">
+        <div class="text"><h3>Cart items</h3></div>
+        <div id="cartContainer"></div>
+        <div id="totalContainer"></div>
+      </div>
        <p>*required. These fields must be filled out to procceed. </p>
-       <button class="checkout-form-btn btn">CONFIRM</button> 
+       <button class="checkout-form-btn btn" type="submit">CONFIRM</button> 
+
        <div class="checkout-p-div"> <p>We offer free shipping for all our costumers! Your package will arrive within 2-5 days. By pressing CONFIRM you automatically agree to our Terms & conditions.</p>
        </div> 
      </form>
+    
     </section>
+    <section class="receipt-container hide-item" id="receiptWrapper">
+      <div class="receipt-container">
+        <div class="receipt-title-container">
+        <h2 class="receipt-title">
+          Order confirmation
+        </h2>
+      </div>
+      <div class="order-details-container">
+        <h3 class="sub-text-container">Details</h3>
+        <p>Order ID: #0001 </p>
+        <div id="generateDetails">
+
+        </div>
+      </div>
+      <div class="products-container" id="productsContainer">
+        <div class="titles-container"><h3>Items</h3><h3>Price</h3></div>
+       
+        <div id="generateBooks"></div>
+        <div class="shipping-container"><p>Standard delivery, 2-5 days</p>
+          <p>0SEK</p></div>
+        <div>
+      </div>
+      <div id="generateTotal" class="total-price-container"></div>
+      </div>
+    </div>
+    </section>
+    <div class="hidden-cart-items" id="hiddenCItems"></div>
     </main>
     <footer class="main-footer">
       <div class="footer-column-left">
@@ -101,5 +135,6 @@
       </div>
     </footer>
     <script src="main.js"></script>
+    <script src="checkout.js"></script>
   </body>
 </html>
