@@ -139,14 +139,10 @@ function readJson() {
 
         if (cartItemWrapper) {
           cartItemWrapper.innerHTML = "";
-          //hämta info från local storage
           const items = JSON.parse(localStorage.getItem("cartItems"));
           if (!items) {
           } else {
             items.forEach((item) => {
-              //loopa igenom och hämta id
-
-              //matcha id med id från data och skriv ut titel, författare, omslag, pris
               json.categories.forEach((category) => {
                 category.books.forEach((book) => {
                   if (item.book == book.id) {
@@ -189,7 +185,7 @@ function readJson() {
             const totalPrice = `<p class="total-p">
             Your cart is empty!
             </p>`;
-            document.getElementById("cart-checkout-btn").disabled = true; //Fredrika
+            document.getElementById("cart-checkout-btn").disabled = true; 
             cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
           } else {
             const totalPrice = `<p class="total-p">
