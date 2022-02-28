@@ -656,6 +656,10 @@ main .login-box .login-button, main .login-form .login-button {
   text-align: right;
 }
 
+.comments-text {
+  margin-top: 7px;
+}
+
 .cart-section {
   display: -webkit-box;
   display: -ms-flexbox;
