@@ -65,6 +65,9 @@ function readJson() {
         case "login":
           console.log("log-in-page");
           break;
+        case "checkout":
+          console.log("checkout-page");
+          break;
         default:
           generateCategory(json);
           console.log("start-page");
@@ -85,7 +88,7 @@ function readJson() {
               const newProduct = `<div class="product">
             <div class="img-frame"><img class="book-img" src="${item.src}"</img></div>
             <h2 class="book-title">${item.name}</h2>
-            <h3 class="book-author">-${item.author}</h3>
+            <h3 class="book-author">- ${item.author}</h3>
             <h3 class="category-price">${item.price} kr</h3>
             <a class="more-info" href="product.html?bookid=${item.id}&page=productpage">More information</a>
             <button book-id="${item.id}" class="buy btn">ADD TO CART</button>
@@ -132,8 +135,7 @@ function readJson() {
         });
       }
       //Fanny & Fredrikas funktion för att skriva ut html i varukorgen
-      //Kvar att göra: hålla koll på antal items och skriva ut totalsumma+totalt antal items
-      //Koppla plus&minusknapparna till det
+
       function generateCartItems(json) {
         const cartItemWrapper = document.getElementById("productContainer");
 
@@ -180,11 +182,19 @@ function readJson() {
           });
           console.log(countB);
           console.log(countP);
-          const totalPrice = `<p class="total-p">
-          Total amount(<span class="total-items" id="total-items">${countB}</span>
-          items): <span class="total-price" id="total-price">${countP}</span>SEK
-        </p>`;
-          cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          if (countB < 1) {
+            const totalPrice = `<p class="total-p">
+            Din varukorg är tom!
+            </p>`;
+            document.getElementById("cart-checkout-btn").disabled = true;//Fredrika
+            cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          } else {
+            const totalPrice = `<p class="total-p">
+            Total amount(<span class="total-items" id="total-items">${countB}</span>
+            items): <span class="total-price" id="total-price">${countP}</span>SEK
+          </p>`;
+            cartItemWrapper.insertAdjacentHTML("beforeend", totalPrice);
+          }
         }
       }
       const buyButton = document.querySelectorAll(".buy");
@@ -217,20 +227,18 @@ function readJson() {
 }
 readJson();
 
-//Fanny länka checkout knapp till checkout formulär + alert om shopping cart är tom
-let myCheckoutButton = document.querySelector("#cart-checkout-btn");
-
-if (window.location.href === "http://127.0.0.1:5500/shoppingcart.html") {
-  myCheckoutButton.addEventListener("click", () => {
-    if (localStorage.getItem("cartItems") === null) {
-      alert("You need to add an item to the shopping cart!");
-    } else {
-      window.location.href = "http://127.0.0.1:5500/checkout.html";
-    }
-  });
-}
 if (localStorage.getItem("currentUser") !== null) {
   console.log("logged in user: " + localStorage.getItem("currentUser"));
+  const checkOutFormElem = document.querySelector("#checkoutForm");
+  let currentU = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(currentU.name);
+  if (checkOutFormElem) {
+    let autoFillFields = document.querySelectorAll("[autofill]");
+    autoFillFields.forEach((item) => {
+      let cItem = item.getAttribute("autofill");
+      item.value = currentU[cItem];
+    });
+  }
   const signOut = document.querySelector(".log-in-button");
   signOut.addEventListener("click", function () {
     localStorage.removeItem("currentUser");

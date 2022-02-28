@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: blanchedalmond;
+    background-color: $light-color;
     height: 50%;
     width: 100%;
     .cart-products-wrapper {
@@ -43,6 +43,7 @@
           margin-top: 10%;
           display: flex;
           flex-direction: row;
+          align-items: center;
 
           .cart-btn {
             @include booktuary-font;
@@ -54,21 +55,16 @@
             border-radius: 5px;
             background-color: $accent-color;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-            padding: 0 10%;
+            padding: 0 6%;//Fredrika testar göra dem lite mindre. 10% från början
             height: 0%;
             margin: 5%;
           }
           .cart-btn:hover {
             background: #b99e83;
-            color: blanchedalmond;
+            color: $light-color;
           }
         }
       }
-    }
-    .total-p {
-      margin: 5%;
-      position: relative;
-      left: 15%;
     }
   }
   .cart-checkout-btn {

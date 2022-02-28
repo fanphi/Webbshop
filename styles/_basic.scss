@@ -1,5 +1,4 @@
 //Styling mobile first
-
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +8,7 @@
   width: 100%;
   height: 30%;
   background-color: $header-color;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   justify-content: center;
   align-items: space-between;
 
@@ -28,9 +26,10 @@
 
     .login-nav {
       //*Kev ändringar
-      width: 30%;
+      width: 40%;//fredrika testat ändra till 40
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-end;
+
       margin-top: 20px;
       margin-right: 10px;
       a {
@@ -38,11 +37,13 @@
         color: $accent-color;
         text-decoration: none;
         font-weight: 350;
+        //Fredrika justerat avståndet mellan ikon och text 
+        i {
+          margin: 0px 10px;
+        }
       }
     } //* slut på ändringar, flyttade a{...} inuti bara för att det ska vara konsekvent
   }
-
- 
 
   .nav-wrapper {
     text-align: center;
@@ -60,8 +61,8 @@
         font-weight: 350;
         padding: 0px 10px;
         text-transform: capitalize;
+
         &:hover{
-          // font-size: 1.5rem;
           color: aliceblue;
           text-decoration: underline;
         }
@@ -82,17 +83,15 @@
   background-color: $accent-color;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   height: 40px;
-  // width: 110px;
 }
 
 .btn:hover {
   background: #b99e83;
-  color: blanchedalmond;
+  color: $light-color;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   align-items: center;
   justify-content: flex-start;
   background-color: $logo-color;
@@ -102,8 +101,7 @@ main {
   .start-headline {
     margin-top: 30px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: center;
     align-items: center;
     h1 {
@@ -141,15 +139,6 @@ main {
     align-items: center;
 
     .product-container {
-      // height: 225px;
-      // width: 180px;
-      //display: flex;
-      // justify-content: center;
-
-      //align-items: center;
-      //flex-direction: column;
-      //gap: 25px;
-
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       grid-gap: 25px;
@@ -157,20 +146,21 @@ main {
       justify-items: center;
 
       .img-frame {
-        background: blanchedalmond;
+        background: $light-color;
         height: 230px;
         width: 180px;
         display: flex;
         justify-content: center;
         align-items: center;
       }
+
       .img-frame.category-frame {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         height: unset;
         min-height: 230px;
         padding: 15px 0px;
       }
+
       .categ-title-container {
         padding: 0px 17px;
         text-transform: uppercase;
@@ -178,11 +168,13 @@ main {
           text-transform: capitalize;
         }
       }
+
       .buy-button-container {
         &.product-info-page {
           text-align: right;
         }
       }
+
       .select-category {
         text-decoration: none;
       }
@@ -194,21 +186,27 @@ main {
 
       .book-title {
         margin-top: 10px;
-        font-size: 20px;
+        font-size: large;
       }
 
       .category-price {
         font-size: large;
+        font-weight: lighter;
         font-style: oblique;
-        //margin-bottom: 10px;
       }
       .product {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
         max-width: min-content;
+
+        //Fredrikas justering av textstorlek
+        .book-author{
+          font-size: medium;
+          font-weight: lighter;
+        }
+
         &.book-page {
           flex-direction: row;
-          background-color: white;
+          background-color: $light-color;
           padding: 15px;
           border-radius: 5px;
           margin-bottom: 10px;
@@ -242,8 +240,7 @@ main {
         }
       }
       .product-info-container {
-        display: flex;
-        flex-direction: column;
+        @include flex-column;
       }
       .more-info {
         margin-bottom: 10px;
@@ -253,12 +250,10 @@ main {
       }
     }
   }
-
- 
 }
 
 .main-footer {
-  background: #7e4b34;
+  background: $footer-color;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -285,11 +280,11 @@ main {
 }
 
 .fa-brands {
-  color: blanchedalmond;
+  color: $light-color;
 }
 
 .fa-solid {
-  color: blanchedalmond;
+  color: $light-color;
 }
 
 @media screen and (max-width: 500px) {

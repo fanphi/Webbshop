@@ -49,19 +49,19 @@
     <main class="checkout-main">
       <section class="checkout-wrapper">
      <h2 class="checkout-h2">CHECKOUT</h1>
-     <form action="" class="checkout-form">
-       <label for="name-checkout-input">Full name*</label>
-       <input type="name" id="name-checkout-input" required class="checkout-input">
-       <label for="address-checkout-input">Address*</label>
-       <input type="address" id="address-checkout-input" required class="checkout-input">
+     <form action="" class="checkout-form" id="checkoutForm">
+       <label for="name-checkout-input" >Full name*</label>
+       <input type="name" id="name-checkout-input" autofill="name"required class="checkout-input">
+       <label for="address-checkout-input" >Address*</label>
+       <input type="address" id="address-checkout-input" autofill="address" required class="checkout-input">
        <label for="postal-checkout-input">Postal code*</label>
-       <input type="text" pattern="[0-9]*" id="postal-checkout-input" required class="checkout-input">
+       <input type="text" pattern="[0-9]*" autofill="zipcode" id="postal-checkout-input" required class="checkout-input">
        <label for="city-checkout-input">City*</label>
-       <input type="text" id="city-checkout-input" class="checkout-input">
+       <input type="text" id="city-checkout-input" autofill="city" class="checkout-input">
        <label for="email-checkout-input">Email*</label>
-       <input type="email" id="email-checkout-input" class="checkout-input">
+       <input type="email" id="email-checkout-input" autofill="email" class="checkout-input">
        <label for="phone-checkout-input">Phone number</label>
-       <input type="tel" id="phone-checkout-input" class="checkout-input">
+       <input type="tel" id="phone-checkout-input" autofill="phone" class="checkout-input">
        <label for="comments-checkout-input">Comments</label>
        <input type="text" id="comments-checkout-input" class="checkout-input">
        <p>*required. These fields must be filled out to procceed. </p>
