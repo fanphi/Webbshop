@@ -18,10 +18,60 @@ function handleSubmit(event) {
   receipt.classList.remove("hide-item");
   formContainer.classList.add("hide-item");
 }
-
+showCart();
 const generateTotal = document.getElementById("generateTotal");
 const generateUDetails = document.getElementById("generateDetails");
 const productWrapper = document.querySelector("#generateBooks");
+const visibleCartWrapper = document.querySelector("#cartContainer");
+const totalCartWrapper = document.querySelector("#totalContainer");
+function showCart() {
+  fetch("./data/products.json")
+    .then((response) => {
+      if (!response.ok) {
+        console.log("error");
+      }
+      return response.json();
+    })
+    .then((json) => {
+      const items = JSON.parse(localStorage.getItem("cartItems"));
+
+      items.forEach((item) => {
+        //loopa igenom och hämta id
+        console.log(item);
+        //matcha id med id från data och skriv ut titel, författare, omslag, pris
+        json.categories.forEach((category) => {
+          category.books.forEach((book) => {
+            if (item.book == book.id) {
+              const totalP = item.count * book.price;
+              console.log(book);
+              const newCartItem = `
+              <div class="book">
+           <p class="cart-author" id="cart-author">${book.title}, ${book.author} (${item.count}ST)</p>
+           <div class="book-container">
+            <span class="numberr-item" totalPrice=${totalP} totalBook=${item.count} id="number-item"></span>
+           <p class="cart-price" id="cart-price">${totalP}SEK</p></div></div>
+         `;
+              visibleCartWrapper.insertAdjacentHTML("beforeend", newCartItem);
+            }
+          });
+        });
+      });
+
+      let totalBooks = document.querySelectorAll(".numberr-item");
+      let countB = 0;
+      let countP = 0;
+      totalBooks.forEach((item) => {
+        countB += parseInt(item.getAttribute("totalBook"));
+        countP += parseInt(item.getAttribute("totalPrice"));
+      });
+
+      const totalPrice = `<p class="total-p">
+      Total (<span class="total-items" id="total-items">${countB}</span>
+      items): <span class="total-price" id="total-price"> ${countP}</span>SEK
+    </p>`;
+      totalCartWrapper.insertAdjacentHTML("beforeend", totalPrice);
+    });
+}
 
 function generateReceipt(
   userfullName,
