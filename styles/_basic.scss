@@ -50,6 +50,13 @@
         //Fredrika justerat avståndet mellan ikon och text
         i {
           margin: 0px 10px;
+          &:hover {
+            color: aliceblue;
+          }
+        }
+        &:hover {
+          color: aliceblue;
+          // font-size: 1.2rem;
         }
       }
     } //* slut på ändringar, flyttade a{...} inuti bara för att det ska vara konsekvent
