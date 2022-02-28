@@ -130,7 +130,7 @@ main {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #e7bd70;
-  min-height: 500px;
+  min-height: 635px;
 }
 
 main .start-headline {
@@ -598,6 +598,63 @@ main .login-box .login-button, main .login-form .login-button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.receipt-container {
+  padding: 25px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.receipt-container .sub-text-container {
+  margin-bottom: 5px;
+}
+
+.receipt-container .receipt-title {
+  margin-bottom: 10px;
+}
+
+.receipt-container .order-details-container {
+  margin-bottom: 15px;
+}
+
+.receipt-container .titles-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.1fr;
+      grid-template-columns: 1fr 0.1fr;
+}
+
+.receipt-container .total-price-container {
+  text-align: right;
+  margin-top: 25px;
+}
+
+.book,
+.shipping-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 0.1fr;
+      grid-template-columns: 1fr 0.1fr;
+  grid-gap: 25px;
+  margin-bottom: 7px;
+}
+
+.book p.cart-author {
+  text-align: left;
+}
+
+.hide-item {
+  display: none;
+}
+
+.cart-container {
+  margin-bottom: 20px;
+}
+
+#totalContainer p.total-p {
+  text-align: right;
 }
 
 .cart-section {
