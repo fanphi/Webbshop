@@ -2,6 +2,7 @@ const searchFilter = document.getElementById("searchInput");
 searchFilter.addEventListener("keyup", (event) => {
   filter();
 });
+//filter function, gets the appropriate elements and gets inner html and looks if search input exists if it does show that element
 function filter() {
   let value = searchFilter.value;
   var filter = value.toUpperCase();
